@@ -1,0 +1,176 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/30/2016  22:34:37  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\main.obj TO .\Objects\ShiftOutWith74HC595 PRINT (.\Listings
+>> \ShiftOutWith74HC595.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\main.obj (MAIN)
+
+
+LINK MAP OF MODULE:  .\Objects\ShiftOutWith74HC595 (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0009H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0064H     UNIT         ?PR?_SHIFTOUT?MAIN
+            CODE    0864H     002DH     UNIT         ?PR?MAIN?MAIN
+            CODE    0891H     0026H     UNIT         ?PR?_DELAY?MAIN
+            CODE    08B7H     000FH     UNIT         ?PR?CLOCK_DELAY?MAIN
+            CODE    08C6H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\ShiftOutWith74HC595 (?C_STARTUP)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                  0008H    0001H
+  +--> ?PR?_DELAY?MAIN
+  +--> ?PR?_SHIFTOUT?MAIN
+
+?PR?_SHIFTOUT?MAIN             -----    -----
+  +--> ?PR?CLOCK_DELAY?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\ShiftOutWith74HC595 (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/30/2016  22:34:37  PAGE 2
+
+
+  -------         MODULE        ?C_STARTUP
+  C:08C6H         SEGMENT       ?C_C51STARTUP
+  I:0009H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:08C9H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:08C6H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:08C6H         LINE#         133
+  C:08C8H         LINE#         134
+  C:08C9H         LINE#         135
+  C:08CAH         LINE#         136
+  C:08CCH         LINE#         185
+  C:08CFH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:08B7H         PUBLIC        clock_delay
+  B:0090H.0       PUBLIC        P1_0
+  C:0891H         PUBLIC        _delay
+  B:0090H.1       PUBLIC        P1_1
+  B:0090H.2       PUBLIC        P1_2
+  C:0864H         PUBLIC        main
+  C:0800H         PUBLIC        _shiftOut
+  -------         PROC          CLOCK_DELAY
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:08B7H         LINE#         23
+  C:08B7H         LINE#         24
+  C:08B7H         LINE#         26
+  C:08C5H         LINE#         27
+  -------         ENDPROC       CLOCK_DELAY
+  -------         PROC          _SHIFTOUT
+  D:0001H         SYMBOL        BitOrder
+  D:0005H         SYMBOL        val
+  -------         DO            
+  D:0003H         SYMBOL        i
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/30/2016  22:34:37  PAGE 3
+
+
+  -------         ENDDO         
+  C:0800H         LINE#         29
+  C:0802H         LINE#         30
+  C:0802H         LINE#         32
+  C:0804H         LINE#         33
+  C:0809H         LINE#         34
+  C:0829H         LINE#         36
+  C:0853H         LINE#         37
+  C:0856H         LINE#         38
+  C:0858H         LINE#         39
+  C:085BH         LINE#         40
+  C:085DH         LINE#         41
+  C:0863H         LINE#         42
+  -------         ENDPROC       _SHIFTOUT
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        x
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0891H         LINE#         7
+  C:0891H         LINE#         8
+  C:0891H         LINE#         10
+  C:08A1H         LINE#         11
+  C:08B6H         LINE#         12
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        val
+  -------         ENDDO         
+  C:0864H         LINE#         14
+  C:0864H         LINE#         15
+  C:0864H         LINE#         16
+  C:0866H         LINE#         17
+  C:0868H         LINE#         18
+  C:086AH         LINE#         19
+  C:0871H         LINE#         20
+  C:0871H         LINE#         22
+  C:087BH         LINE#         23
+  C:087DH         LINE#         24
+  C:0884H         LINE#         25
+  C:0886H         LINE#         26
+  C:088DH         LINE#         27
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00D5H BYTE (10%) *
+******************************************************************************
+
+Program Size: data=10.0 xdata=0 code=213
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
