@@ -14,6 +14,8 @@
 - 40 pin(40 pin dip socket 0.6"給AT89C51用的) 插槽      * 20
 - 16 pin(16 pin DIP socket 0.25"給74HC595(DIP[THT])) 插槽      * 40
 - usb (Type-A)母頭          * 20
+- 10uF 50V電容            * 20
+- 100uF 50V電容           * 20
 
 misc
 - 40w 烙鐵            * 5 
