@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj" 
+TO ".\Objects\ShiftOutWith74HC595" 
+PRINT(".\Listings\ShiftOutWith74HC595.m51")
