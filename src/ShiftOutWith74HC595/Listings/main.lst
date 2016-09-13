@@ -1,0 +1,53 @@
+C51 COMPILER V9.56.0.0   MAIN                                                              08/30/2016 22:34:37 PAGE 1   
+
+
+C51 COMPILER V9.56.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.exe main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          
+   2          #include<regx51.h>
+   3          #include<8051ShiftOut.h>
+   4          
+   5          #define LATCH_PIN P1_2    //STCP
+   6          
+   7          void delay(int x)
+   8          {
+   9   1        int i,j;
+  10   1        for ( i = 0 ; i < x ; i ++ )
+  11   1          for (j = 0 ; j < 160 ; j ++);
+  12   1      }
+  13          
+  14          void main()
+  15          {
+  16   1        CLOCK_PIN = 0;
+  17   1        DATA_PIN = 0;
+  18   1        LATCH_PIN = 1;
+  19   1        delay(100);
+  20   1        while(1){
+  21   2          unsigned char val;
+  22   2          for (val = 0 ; val < 256 ; val++){
+  23   3            P1_2 = 0;
+  24   3            shiftOut(LSBFIRST,val);
+  25   3            P1_2 = 1;
+  26   3            delay(1000);
+  27   3          }
+  28   2        }
+  29   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    198    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       1
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
