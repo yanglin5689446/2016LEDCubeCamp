@@ -42,7 +42,7 @@ void delay(unsigned int);
  **功能: shift out data to DS
  **************************************************************************************/
 void shiftOut(unsigned char BitOrder,unsigned char val);
-
+void clock_delay();
 /****************************************************************************************
  *      you can call these function
  *      你可以使用以下函式
@@ -98,9 +98,12 @@ void display(unsigned char times);
  ***************************************************************************************/
 void main()
 {
+		//int x;
+		init();
 		while(1){
-			int x;
-			init();
+		
+			
+			/*
 			turnOn(0,0,1);
 		
 			for (x = 0 ; x < 100 ; x++)
@@ -123,6 +126,21 @@ void main()
 		
 			for (x = 0 ; x < 100 ; x++)
 				display(2);
+				*/
+			LED[0] = 0xAAAA;
+			turnOn(1,0,1);
+			turnOn(3,0,1);
+			turnOn(1,1,1);
+			turnOn(3,1,1);
+			turnOn(1,2,1);
+			turnOn(3,2,1);
+			turnOn(1,3,1);
+			turnOn(3,3,1);
+			LED[2] = 0xAAAA;
+			LED[3] = 0xAAAA;
+			while(1){
+					display(10);
+			}
 	}
 }
 
@@ -147,7 +165,18 @@ void init()
     LAYER_2 = 0;
     LAYER_3 = 0;
     LAYER_4 = 0;
+		LED[0] = 0;
+		LED[1] = 0;
+		LED[2] = 0;
+		LED[3] = 0;
 }
+
+void clock_delay()
+{
+    unsigned i;
+    for (i = 0 ; i < 5 ; i++);
+}
+
 
 void shiftOut(unsigned char BitOrder,unsigned char val)
 {
@@ -157,9 +186,9 @@ void shiftOut(unsigned char BitOrder,unsigned char val)
             DATA_PIN = !!(val & (1<<i));
         else
             DATA_PIN = !!(val & (1<<(7-i)));
-        //clock_delay();
+        clock_delay();
         CLOCK_PIN = 1;
-        //clock_delay();
+        clock_delay();
         CLOCK_PIN = 0;
     }
 }
@@ -185,32 +214,64 @@ unsigned char isOn(unsigned char x, unsigned char y, unsigned char z)
 
 void display(unsigned char times)
 {
-    unsigned char i,high_byte,low_byte;
-    for (i = 1 ; i <= 4 ; i ++ ){
+		int i;
+    unsigned char high_byte,low_byte;
+    for (i = 0 ; i < 4 ; i ++ ){
         high_byte = LED[i] & 0xFF;
         low_byte =  LED[i] >> 8;
         LATCH_PIN = 0;
         shiftOut(LSBFIRST,high_byte);
         shiftOut(LSBFIRST,low_byte);
         LATCH_PIN = 1;  
-        P1 = P1 & 0xE0;
+        P1 = P1 & 0x07;
         /*
           P1 |= 1 << (i+3);
         */
-        switch(i){
+        /*switch(i){
+            case 0:
+            //    LAYER_1 = 1;
+                P1_3 = 1;
+								P1_4 = 0;
+								P1_5 = 0;
+								P1_6 = 0;
+								break;
             case 1:
-                LAYER_1 = 1;
-                break;
+            //    LAYER_2 = 1;
+								P1_3 = 0;
+								P1_4 = 1;
+								P1_5 = 0;
+								P1_6 = 0;
+								break;
             case 2:
-                LAYER_2 = 1;
+            //    LAYER_3 = 1;
+								P1_3 = 0;
+								P1_4 = 0;
+								P1_5 = 1;
+								P1_6 = 0;
                 break;
             case 3:
-                LAYER_3 = 1;
+            //    LAYER_4 = 1;
+								P1_3 = 0;
+								P1_4 = 0;
+								P1_5 = 1;
+								P1_6 = 0;
                 break;
-            case 4:
-                LAYER_3 = 1;
-                break;
-        }
+						default:
+								LAYER_1 = 1;
+								LAYER_2 = 1;
+								LAYER_3 = 1;
+								LAYER_4 = 1;
+        }*/
+				
+				if( i == 0 ){
+					LAYER_1 = 1;
+				}else if( i == 1 ){
+					LAYER_2 = 1;
+				}else if( i == 2 ){
+					LAYER_3 = 1;
+				}else if( i == 3){
+					LAYER_4 = 1;
+				}
         delay(times);
     }
 }
