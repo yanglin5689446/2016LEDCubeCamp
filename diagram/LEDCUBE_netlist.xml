@@ -1,800 +1,880 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Created with Fritzing (http://www.fritzing.org/) -->
-<netlist date="Sat Sep 3 18:06:07 2016" sketch="LEDCUBE.fzz">
+<netlist sketch="LEDCUBE.fzz" date="Thu Sep 22 10:55:52 2016">
  <net>
-  <connector name="Pin 1" id="connector1">
-   <part title="220 Ω Resistor" id="854167252" label="R1"/>
+  <connector id="connector1" name="Pin 1">
+   <part id="854167251" label="R1" title="220 Ω Resistor"/>
   </connector>
-  <connector name="Pin 1" id="connector1">
-   <part title="220Ω Resistor" id="854167250" label="R1"/>
+  <connector id="connector1" name="Pin 1">
+   <part id="854167250" label="R1" title="220Ω Resistor"/>
   </connector>
-  <connector name="Pin 0" id="connector0">
-   <part title="220 Ω Resistor" id="854167252" label="R1"/>
+  <connector id="connector0" name="Pin 0">
+   <part id="854167251" label="R1" title="220 Ω Resistor"/>
   </connector>
-  <connector name="Pin 0" id="connector0">
-   <part title="220Ω Resistor" id="854167250" label="R1"/>
+  <connector id="connector0" name="Pin 0">
+   <part id="854167250" label="R1" title="220Ω Resistor"/>
   </connector>
-  <connector name="-" id="connector0">
-   <part title="Electrolytic Capacitor" id="854164720" label="C1"/>
+  <connector id="connector0" name="-">
+   <part id="854164720" label="C1" title="Electrolytic Capacitor"/>
   </connector>
-  <connector name="-" id="connector0">
-   <part title="Electrolytic Capacitor" id="854164722" label="C1"/>
+  <connector id="connector0" name="-">
+   <part id="854164721" label="C1" title="Electrolytic Capacitor"/>
   </connector>
-  <connector name="pin20" id="connector19">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector19" name="pin20">
+   <part id="66220" label="IC1" title="AT89C51"/>
   </connector>
-  <connector name="pin20" id="connector19">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector19" name="pin20">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
   </connector>
-  <connector name="pin9" id="connector8">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector0" name="-">
+   <part id="854181640" label="C3" title="Electrolytic Capacitor"/>
   </connector>
-  <connector name="pin9" id="connector8">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector0" name="-">
+   <part id="854181641" label="C3" title="Electrolytic Capacitor"/>
   </connector>
-  <connector name="VBUS" id="connector5">
-   <part title="USB Connectors" id="854109292" label="X1"/>
+  <connector id="connector8" name="pin9">
+   <part id="66220" label="IC1" title="AT89C51"/>
   </connector>
-  <connector name="OE" id="connector12">
-   <part title="74HC595" id="854111420" label="U1"/>
+  <connector id="connector8" name="pin9">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
   </connector>
-  <connector name="OE" id="connector12">
-   <part title="74HC595" id="854111422" label="U1"/>
+  <connector id="connector5" name="VBUS">
+   <part id="854109291" label="X1" title="USB Connectors"/>
   </connector>
-  <connector name="GND" id="connector7">
-   <part title="74HC595" id="854111450" label="U2"/>
+  <connector id="connector0" name="-">
+   <part id="854181520" label="C2" title="Electrolytic Capacitor"/>
   </connector>
-  <connector name="GND" id="connector7">
-   <part title="74HC595" id="854111452" label="U2"/>
+  <connector id="connector0" name="-">
+   <part id="854181521" label="C2" title="Electrolytic Capacitor"/>
   </connector>
-  <connector name="E" id="connector0">
-   <part title="NPN-Transistor" id="854170540" label="Q1"/>
+  <connector id="connector12" name="OE">
+   <part id="854111420" label="U1" title="74HC595"/>
   </connector>
-  <connector name="E" id="connector0">
-   <part title="NPN-Transistor" id="854170542" label="Q1"/>
+  <connector id="connector12" name="OE">
+   <part id="854111421" label="U1" title="74HC595"/>
   </connector>
-  <connector name="OE" id="connector12">
-   <part title="74HC595" id="854111450" label="U2"/>
+  <connector id="connector7" name="GND">
+   <part id="854111450" label="U2" title="74HC595"/>
   </connector>
-  <connector name="OE" id="connector12">
-   <part title="74HC595" id="854111452" label="U2"/>
+  <connector id="connector7" name="GND">
+   <part id="854111451" label="U2" title="74HC595"/>
   </connector>
-  <connector name="E" id="connector0">
-   <part title="NPN-Transistor" id="854170570" label="Q2"/>
+  <connector id="connector0" name="E">
+   <part id="854170540" label="Q1" title="NPN-Transistor"/>
   </connector>
-  <connector name="E" id="connector0">
-   <part title="NPN-Transistor" id="854170572" label="Q2"/>
+  <connector id="connector0" name="E">
+   <part id="854170541" label="Q1" title="NPN-Transistor"/>
   </connector>
-  <connector name="GND" id="connector7">
-   <part title="74HC595" id="854111420" label="U1"/>
+  <connector id="connector12" name="OE">
+   <part id="854111450" label="U2" title="74HC595"/>
   </connector>
-  <connector name="GND" id="connector7">
-   <part title="74HC595" id="854111422" label="U1"/>
+  <connector id="connector12" name="OE">
+   <part id="854111451" label="U2" title="74HC595"/>
   </connector>
-  <connector name="E" id="connector0">
-   <part title="NPN-Transistor" id="854170600" label="Q3"/>
+  <connector id="connector0" name="E">
+   <part id="854170570" label="Q2" title="NPN-Transistor"/>
   </connector>
-  <connector name="E" id="connector0">
-   <part title="NPN-Transistor" id="854170602" label="Q3"/>
+  <connector id="connector0" name="E">
+   <part id="854170571" label="Q2" title="NPN-Transistor"/>
   </connector>
-  <connector name="E" id="connector0">
-   <part title="NPN-Transistor" id="854170630" label="Q4"/>
+  <connector id="connector7" name="GND">
+   <part id="854111420" label="U1" title="74HC595"/>
   </connector>
-  <connector name="E" id="connector0">
-   <part title="NPN-Transistor" id="854170632" label="Q4"/>
+  <connector id="connector7" name="GND">
+   <part id="854111421" label="U1" title="74HC595"/>
+  </connector>
+  <connector id="connector0" name="E">
+   <part id="854170600" label="Q3" title="NPN-Transistor"/>
+  </connector>
+  <connector id="connector0" name="E">
+   <part id="854170601" label="Q3" title="NPN-Transistor"/>
+  </connector>
+  <connector id="connector0" name="E">
+   <part id="854170630" label="Q4" title="NPN-Transistor"/>
+  </connector>
+  <connector id="connector0" name="E">
+   <part id="854170631" label="Q4" title="NPN-Transistor"/>
   </connector>
  </net>
  <net>
-  <connector name="pin7" id="connector6">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector1" name="+">
+   <part id="854181640" label="C3" title="Electrolytic Capacitor"/>
   </connector>
-  <connector name="pin7" id="connector6">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector1" name="+">
+   <part id="854181641" label="C3" title="Electrolytic Capacitor"/>
   </connector>
-  <connector name="B" id="connector1">
-   <part title="NPN-Transistor" id="854170630" label="Q4"/>
+  <connector id="connector1" name="pin 1">
+   <part id="854110710" label="XTAL1" title="Crystal"/>
   </connector>
-  <connector name="B" id="connector1">
-   <part title="NPN-Transistor" id="854170632" label="Q4"/>
+  <connector id="connector1" name="pin 1">
+   <part id="854110711" label="XTAL1" title="Crystal"/>
   </connector>
- </net>
- <net>
-  <connector name="pin6" id="connector5">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector18" name="pin19">
+   <part id="66220" label="IC1" title="AT89C51"/>
   </connector>
-  <connector name="pin6" id="connector5">
-   <part title="AT89C51" id="66220" label="IC1"/>
-  </connector>
-  <connector name="B" id="connector1">
-   <part title="NPN-Transistor" id="854170600" label="Q3"/>
-  </connector>
-  <connector name="B" id="connector1">
-   <part title="NPN-Transistor" id="854170602" label="Q3"/>
+  <connector id="connector18" name="pin19">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
   </connector>
  </net>
  <net>
-  <connector name="C" id="connector2">
-   <part title="NPN-Transistor" id="854170630" label="Q4"/>
+  <connector id="connector1" name="+">
+   <part id="854181520" label="C2" title="Electrolytic Capacitor"/>
   </connector>
-  <connector name="C" id="connector2">
-   <part title="NPN-Transistor" id="854170632" label="Q4"/>
+  <connector id="connector1" name="+">
+   <part id="854181521" label="C2" title="Electrolytic Capacitor"/>
   </connector>
-  <connector name="pin4" id="connector3">
-   <part title="Generic female header - 4 pins" id="854172780" label="J3"/>
+  <connector id="connector0" name="pin 0">
+   <part id="854110710" label="XTAL1" title="Crystal"/>
   </connector>
-  <connector name="pin4" id="connector3">
-   <part title="Generic female header - 4 pins" id="854172782" label="J3"/>
+  <connector id="connector0" name="pin 0">
+   <part id="854110711" label="XTAL1" title="Crystal"/>
   </connector>
- </net>
- <net>
-  <connector name="C" id="connector2">
-   <part title="NPN-Transistor" id="854170600" label="Q3"/>
+  <connector id="connector17" name="pin18">
+   <part id="66220" label="IC1" title="AT89C51"/>
   </connector>
-  <connector name="C" id="connector2">
-   <part title="NPN-Transistor" id="854170602" label="Q3"/>
-  </connector>
-  <connector name="pin3" id="connector2">
-   <part title="Generic female header - 4 pins" id="854172780" label="J3"/>
-  </connector>
-  <connector name="pin3" id="connector2">
-   <part title="Generic female header - 4 pins" id="854172782" label="J3"/>
+  <connector id="connector17" name="pin18">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
   </connector>
  </net>
  <net>
-  <connector name="B" id="connector1">
-   <part title="NPN-Transistor" id="854170570" label="Q2"/>
+  <connector id="connector1" name="Pin 1">
+   <part id="854191551" label="R5" title="1k Ω Resistor"/>
   </connector>
-  <connector name="B" id="connector1">
-   <part title="NPN-Transistor" id="854170572" label="Q2"/>
+  <connector id="connector1" name="Pin 1">
+   <part id="854191550" label="R5" title="1kΩ Resistor"/>
   </connector>
-  <connector name="pin5" id="connector4">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector6" name="pin7">
+   <part id="66220" label="IC1" title="AT89C51"/>
   </connector>
-  <connector name="pin5" id="connector4">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
-  </connector>
- </net>
- <net>
-  <connector name="pin2" id="connector1">
-   <part title="Generic female header - 4 pins" id="854172780" label="J3"/>
-  </connector>
-  <connector name="pin2" id="connector1">
-   <part title="Generic female header - 4 pins" id="854172782" label="J3"/>
-  </connector>
-  <connector name="C" id="connector2">
-   <part title="NPN-Transistor" id="854170570" label="Q2"/>
-  </connector>
-  <connector name="C" id="connector2">
-   <part title="NPN-Transistor" id="854170572" label="Q2"/>
+  <connector id="connector6" name="pin7">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
   </connector>
  </net>
  <net>
-  <connector name="C" id="connector2">
-   <part title="NPN-Transistor" id="854170540" label="Q1"/>
+  <connector id="connector1" name="B">
+   <part id="854170630" label="Q4" title="NPN-Transistor"/>
   </connector>
-  <connector name="C" id="connector2">
-   <part title="NPN-Transistor" id="854170542" label="Q1"/>
+  <connector id="connector1" name="B">
+   <part id="854170631" label="Q4" title="NPN-Transistor"/>
   </connector>
-  <connector name="pin1" id="connector0">
-   <part title="Generic female header - 4 pins" id="854172780" label="J3"/>
+  <connector id="connector0" name="Pin 0">
+   <part id="854191550" label="R5" title="1kΩ Resistor"/>
   </connector>
-  <connector name="pin1" id="connector0">
-   <part title="Generic female header - 4 pins" id="854172782" label="J3"/>
-  </connector>
- </net>
- <net>
-  <connector name="B" id="connector1">
-   <part title="NPN-Transistor" id="854170540" label="Q1"/>
-  </connector>
-  <connector name="B" id="connector1">
-   <part title="NPN-Transistor" id="854170542" label="Q1"/>
-  </connector>
-  <connector name="pin4" id="connector3">
-   <part title="AT89C51" id="66220" label="IC1"/>
-  </connector>
-  <connector name="pin4" id="connector3">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector0" name="Pin 0">
+   <part id="854191551" label="R5" title="1k Ω Resistor"/>
   </connector>
  </net>
  <net>
-  <connector name="VCC" id="connector15">
-   <part title="74HC595" id="854111452" label="U2"/>
+  <connector id="connector5" name="pin6">
+   <part id="66220" label="IC1" title="AT89C51"/>
   </connector>
-  <connector name="VCC" id="connector15">
-   <part title="74HC595" id="854111450" label="U2"/>
+  <connector id="connector5" name="pin6">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
   </connector>
-  <connector name="pin31" id="connector30">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector1" name="Pin 1">
+   <part id="854191170" label="R4" title="1kΩ Resistor"/>
   </connector>
-  <connector name="pin31" id="connector30">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
-  </connector>
-  <connector name="MR" id="connector9">
-   <part title="74HC595" id="854111420" label="U1"/>
-  </connector>
-  <connector name="MR" id="connector9">
-   <part title="74HC595" id="854111422" label="U1"/>
-  </connector>
-  <connector name="MR" id="connector9">
-   <part title="74HC595" id="854111450" label="U2"/>
-  </connector>
-  <connector name="MR" id="connector9">
-   <part title="74HC595" id="854111452" label="U2"/>
-  </connector>
-  <connector name="VCC" id="connector15">
-   <part title="74HC595" id="854111420" label="U1"/>
-  </connector>
-  <connector name="VCC" id="connector15">
-   <part title="74HC595" id="854111422" label="U1"/>
-  </connector>
-  <connector name="+" id="connector1">
-   <part title="Electrolytic Capacitor" id="854164720" label="C1"/>
-  </connector>
-  <connector name="+" id="connector1">
-   <part title="Electrolytic Capacitor" id="854164722" label="C1"/>
-  </connector>
-  <connector name="GND" id="connector4">
-   <part title="USB Connectors" id="854109292" label="X1"/>
-  </connector>
-  <connector name="pin40" id="connector39">
-   <part title="AT89C51" id="66220" label="IC1"/>
-  </connector>
-  <connector name="pin40" id="connector39">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector1" name="Pin 1">
+   <part id="854191171" label="R4" title="1k Ω Resistor"/>
   </connector>
  </net>
  <net>
-  <connector name="pin 1" id="connector1">
-   <part title="Crystal" id="854110712" label="XTAL1"/>
+  <connector id="connector0" name="Pin 0">
+   <part id="854191170" label="R4" title="1kΩ Resistor"/>
   </connector>
-  <connector name="pin 1" id="connector1">
-   <part title="Crystal" id="854110710" label="XTAL1"/>
+  <connector id="connector0" name="Pin 0">
+   <part id="854191171" label="R4" title="1k Ω Resistor"/>
   </connector>
-  <connector name="pin19" id="connector18">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector1" name="B">
+   <part id="854170600" label="Q3" title="NPN-Transistor"/>
   </connector>
-  <connector name="pin19" id="connector18">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
-  </connector>
- </net>
- <net>
-  <connector name="SH_CP" id="connector10">
-   <part title="74HC595" id="854111450" label="U2"/>
-  </connector>
-  <connector name="SH_CP" id="connector10">
-   <part title="74HC595" id="854111452" label="U2"/>
-  </connector>
-  <connector name="SH_CP" id="connector10">
-   <part title="74HC595" id="854111420" label="U1"/>
-  </connector>
-  <connector name="SH_CP" id="connector10">
-   <part title="74HC595" id="854111422" label="U1"/>
-  </connector>
-  <connector name="pin2" id="connector1">
-   <part title="AT89C51" id="66220" label="IC1"/>
-  </connector>
-  <connector name="pin2" id="connector1">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector1" name="B">
+   <part id="854170601" label="Q3" title="NPN-Transistor"/>
   </connector>
  </net>
  <net>
-  <connector name="pin18" id="connector17">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector0" name="Pin 0">
+   <part id="854190740" label="R3" title="1kΩ Resistor"/>
   </connector>
-  <connector name="pin18" id="connector17">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector0" name="Pin 0">
+   <part id="854190741" label="R3" title="1k Ω Resistor"/>
   </connector>
-  <connector name="pin 0" id="connector0">
-   <part title="Crystal" id="854110710" label="XTAL1"/>
+  <connector id="connector1" name="B">
+   <part id="854170570" label="Q2" title="NPN-Transistor"/>
   </connector>
-  <connector name="pin 0" id="connector0">
-   <part title="Crystal" id="854110712" label="XTAL1"/>
-  </connector>
- </net>
- <net>
-  <connector name="ST_CP" id="connector11">
-   <part title="74HC595" id="854111420" label="U1"/>
-  </connector>
-  <connector name="ST_CP" id="connector11">
-   <part title="74HC595" id="854111422" label="U1"/>
-  </connector>
-  <connector name="ST_CP" id="connector11">
-   <part title="74HC595" id="854111450" label="U2"/>
-  </connector>
-  <connector name="ST_CP" id="connector11">
-   <part title="74HC595" id="854111452" label="U2"/>
-  </connector>
-  <connector name="pin3" id="connector2">
-   <part title="AT89C51" id="66220" label="IC1"/>
-  </connector>
-  <connector name="pin3" id="connector2">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector1" name="B">
+   <part id="854170571" label="Q2" title="NPN-Transistor"/>
   </connector>
  </net>
  <net>
-  <connector name="pin8" id="connector7">
-   <part title="Generic female header - 8 pins" id="854116640" label="J1"/>
+  <connector id="connector4" name="pin5">
+   <part id="66220" label="IC1" title="AT89C51"/>
   </connector>
-  <connector name="pin8" id="connector7">
-   <part title="Generic female header - 8 pins" id="854116642" label="J1"/>
+  <connector id="connector4" name="pin5">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
   </connector>
-  <connector name="Q7" id="connector6">
-   <part title="74HC595" id="854111420" label="U1"/>
+  <connector id="connector1" name="Pin 1">
+   <part id="854190740" label="R3" title="1kΩ Resistor"/>
   </connector>
-  <connector name="Q7" id="connector6">
-   <part title="74HC595" id="854111422" label="U1"/>
-  </connector>
- </net>
- <net>
-  <connector name="pin7" id="connector6">
-   <part title="Generic female header - 8 pins" id="854116640" label="J1"/>
-  </connector>
-  <connector name="pin7" id="connector6">
-   <part title="Generic female header - 8 pins" id="854116642" label="J1"/>
-  </connector>
-  <connector name="Q6" id="connector5">
-   <part title="74HC595" id="854111420" label="U1"/>
-  </connector>
-  <connector name="Q6" id="connector5">
-   <part title="74HC595" id="854111422" label="U1"/>
+  <connector id="connector1" name="Pin 1">
+   <part id="854190741" label="R3" title="1k Ω Resistor"/>
   </connector>
  </net>
  <net>
-  <connector name="pin5" id="connector4">
-   <part title="Generic female header - 8 pins" id="854116640" label="J1"/>
+  <connector id="connector15" name="VCC">
+   <part id="854111420" label="U1" title="74HC595"/>
   </connector>
-  <connector name="pin5" id="connector4">
-   <part title="Generic female header - 8 pins" id="854116642" label="J1"/>
+  <connector id="connector15" name="VCC">
+   <part id="854111421" label="U1" title="74HC595"/>
   </connector>
-  <connector name="Q4" id="connector3">
-   <part title="74HC595" id="854111420" label="U1"/>
+  <connector id="connector9" name="MR">
+   <part id="854111420" label="U1" title="74HC595"/>
   </connector>
-  <connector name="Q4" id="connector3">
-   <part title="74HC595" id="854111422" label="U1"/>
+  <connector id="connector9" name="MR">
+   <part id="854111421" label="U1" title="74HC595"/>
   </connector>
- </net>
- <net>
-  <connector name="pin6" id="connector5">
-   <part title="Generic female header - 8 pins" id="854116640" label="J1"/>
+  <connector id="connector1" name="+">
+   <part id="854164720" label="C1" title="Electrolytic Capacitor"/>
   </connector>
-  <connector name="pin6" id="connector5">
-   <part title="Generic female header - 8 pins" id="854116642" label="J1"/>
+  <connector id="connector1" name="+">
+   <part id="854164721" label="C1" title="Electrolytic Capacitor"/>
   </connector>
-  <connector name="Q5" id="connector4">
-   <part title="74HC595" id="854111420" label="U1"/>
+  <connector id="connector9" name="MR">
+   <part id="854111450" label="U2" title="74HC595"/>
   </connector>
-  <connector name="Q5" id="connector4">
-   <part title="74HC595" id="854111422" label="U1"/>
+  <connector id="connector9" name="MR">
+   <part id="854111451" label="U2" title="74HC595"/>
   </connector>
- </net>
- <net>
-  <connector name="pin4" id="connector3">
-   <part title="Generic female header - 8 pins" id="854116640" label="J1"/>
+  <connector id="connector15" name="VCC">
+   <part id="854111450" label="U2" title="74HC595"/>
   </connector>
-  <connector name="pin4" id="connector3">
-   <part title="Generic female header - 8 pins" id="854116642" label="J1"/>
+  <connector id="connector15" name="VCC">
+   <part id="854111451" label="U2" title="74HC595"/>
   </connector>
-  <connector name="Q3" id="connector2">
-   <part title="74HC595" id="854111420" label="U1"/>
+  <connector id="connector39" name="pin40">
+   <part id="66220" label="IC1" title="AT89C51"/>
   </connector>
-  <connector name="Q3" id="connector2">
-   <part title="74HC595" id="854111422" label="U1"/>
+  <connector id="connector39" name="pin40">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
   </connector>
- </net>
- <net>
-  <connector name="pin3" id="connector2">
-   <part title="Generic female header - 8 pins" id="854116640" label="J1"/>
+  <connector id="connector4" name="GND">
+   <part id="854109291" label="X1" title="USB Connectors"/>
   </connector>
-  <connector name="pin3" id="connector2">
-   <part title="Generic female header - 8 pins" id="854116642" label="J1"/>
+  <connector id="connector30" name="pin31">
+   <part id="66220" label="IC1" title="AT89C51"/>
   </connector>
-  <connector name="Q2" id="connector1">
-   <part title="74HC595" id="854111420" label="U1"/>
-  </connector>
-  <connector name="Q2" id="connector1">
-   <part title="74HC595" id="854111422" label="U1"/>
+  <connector id="connector30" name="pin31">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
   </connector>
  </net>
  <net>
-  <connector name="pin2" id="connector1">
-   <part title="Generic female header - 8 pins" id="854116640" label="J1"/>
+  <connector id="connector10" name="SH_CP">
+   <part id="854111450" label="U2" title="74HC595"/>
   </connector>
-  <connector name="pin2" id="connector1">
-   <part title="Generic female header - 8 pins" id="854116642" label="J1"/>
+  <connector id="connector10" name="SH_CP">
+   <part id="854111451" label="U2" title="74HC595"/>
   </connector>
-  <connector name="Q1" id="connector0">
-   <part title="74HC595" id="854111420" label="U1"/>
+  <connector id="connector10" name="SH_CP">
+   <part id="854111420" label="U1" title="74HC595"/>
   </connector>
-  <connector name="Q1" id="connector0">
-   <part title="74HC595" id="854111422" label="U1"/>
+  <connector id="connector10" name="SH_CP">
+   <part id="854111421" label="U1" title="74HC595"/>
   </connector>
- </net>
- <net>
-  <connector name="DS" id="connector13">
-   <part title="74HC595" id="854111420" label="U1"/>
+  <connector id="connector1" name="pin2">
+   <part id="66220" label="IC1" title="AT89C51"/>
   </connector>
-  <connector name="DS" id="connector13">
-   <part title="74HC595" id="854111422" label="U1"/>
-  </connector>
-  <connector name="pin1" id="connector0">
-   <part title="AT89C51" id="66220" label="IC1"/>
-  </connector>
-  <connector name="pin1" id="connector0">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector1" name="pin2">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
   </connector>
  </net>
  <net>
-  <connector name="Q0" id="connector14">
-   <part title="74HC595" id="854111422" label="U1"/>
+  <connector id="connector11" name="ST_CP">
+   <part id="854111420" label="U1" title="74HC595"/>
   </connector>
-  <connector name="Q0" id="connector14">
-   <part title="74HC595" id="854111420" label="U1"/>
+  <connector id="connector11" name="ST_CP">
+   <part id="854111421" label="U1" title="74HC595"/>
   </connector>
-  <connector name="pin1" id="connector0">
-   <part title="Generic female header - 8 pins" id="854116640" label="J1"/>
+  <connector id="connector11" name="ST_CP">
+   <part id="854111450" label="U2" title="74HC595"/>
   </connector>
-  <connector name="pin1" id="connector0">
-   <part title="Generic female header - 8 pins" id="854116642" label="J1"/>
+  <connector id="connector11" name="ST_CP">
+   <part id="854111451" label="U2" title="74HC595"/>
   </connector>
- </net>
- <net>
-  <connector name="pin8" id="connector7">
-   <part title="Generic female header - 8 pins" id="854118970" label="J2"/>
+  <connector id="connector2" name="pin3">
+   <part id="66220" label="IC1" title="AT89C51"/>
   </connector>
-  <connector name="pin8" id="connector7">
-   <part title="Generic female header - 8 pins" id="854118972" label="J2"/>
-  </connector>
-  <connector name="Q7" id="connector6">
-   <part title="74HC595" id="854111450" label="U2"/>
-  </connector>
-  <connector name="Q7" id="connector6">
-   <part title="74HC595" id="854111452" label="U2"/>
+  <connector id="connector2" name="pin3">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
   </connector>
  </net>
  <net>
-  <connector name="pin7" id="connector6">
-   <part title="Generic female header - 8 pins" id="854118970" label="J2"/>
+  <connector id="connector7" name="pin8">
+   <part id="854116640" label="J1" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="pin7" id="connector6">
-   <part title="Generic female header - 8 pins" id="854118972" label="J2"/>
+  <connector id="connector7" name="pin8">
+   <part id="854116641" label="J1" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="Q6" id="connector5">
-   <part title="74HC595" id="854111450" label="U2"/>
+  <connector id="connector6" name="Q7">
+   <part id="854111420" label="U1" title="74HC595"/>
   </connector>
-  <connector name="Q6" id="connector5">
-   <part title="74HC595" id="854111452" label="U2"/>
-  </connector>
- </net>
- <net>
-  <connector name="pin6" id="connector5">
-   <part title="Generic female header - 8 pins" id="854118970" label="J2"/>
-  </connector>
-  <connector name="pin6" id="connector5">
-   <part title="Generic female header - 8 pins" id="854118972" label="J2"/>
-  </connector>
-  <connector name="Q5" id="connector4">
-   <part title="74HC595" id="854111450" label="U2"/>
-  </connector>
-  <connector name="Q5" id="connector4">
-   <part title="74HC595" id="854111452" label="U2"/>
+  <connector id="connector6" name="Q7">
+   <part id="854111421" label="U1" title="74HC595"/>
   </connector>
  </net>
  <net>
-  <connector name="pin5" id="connector4">
-   <part title="Generic female header - 8 pins" id="854118970" label="J2"/>
+  <connector id="connector6" name="pin7">
+   <part id="854116640" label="J1" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="pin5" id="connector4">
-   <part title="Generic female header - 8 pins" id="854118972" label="J2"/>
+  <connector id="connector6" name="pin7">
+   <part id="854116641" label="J1" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="Q4" id="connector3">
-   <part title="74HC595" id="854111450" label="U2"/>
+  <connector id="connector5" name="Q6">
+   <part id="854111420" label="U1" title="74HC595"/>
   </connector>
-  <connector name="Q4" id="connector3">
-   <part title="74HC595" id="854111452" label="U2"/>
-  </connector>
- </net>
- <net>
-  <connector name="pin4" id="connector3">
-   <part title="Generic female header - 8 pins" id="854118970" label="J2"/>
-  </connector>
-  <connector name="pin4" id="connector3">
-   <part title="Generic female header - 8 pins" id="854118972" label="J2"/>
-  </connector>
-  <connector name="Q3" id="connector2">
-   <part title="74HC595" id="854111450" label="U2"/>
-  </connector>
-  <connector name="Q3" id="connector2">
-   <part title="74HC595" id="854111452" label="U2"/>
+  <connector id="connector5" name="Q6">
+   <part id="854111421" label="U1" title="74HC595"/>
   </connector>
  </net>
  <net>
-  <connector name="pin3" id="connector2">
-   <part title="Generic female header - 8 pins" id="854118970" label="J2"/>
+  <connector id="connector4" name="pin5">
+   <part id="854116640" label="J1" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="pin3" id="connector2">
-   <part title="Generic female header - 8 pins" id="854118972" label="J2"/>
+  <connector id="connector4" name="pin5">
+   <part id="854116641" label="J1" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="Q2" id="connector1">
-   <part title="74HC595" id="854111450" label="U2"/>
+  <connector id="connector3" name="Q4">
+   <part id="854111420" label="U1" title="74HC595"/>
   </connector>
-  <connector name="Q2" id="connector1">
-   <part title="74HC595" id="854111452" label="U2"/>
-  </connector>
- </net>
- <net>
-  <connector name="pin1" id="connector0">
-   <part title="Generic female header - 8 pins" id="854118972" label="J2"/>
-  </connector>
-  <connector name="pin1" id="connector0">
-   <part title="Generic female header - 8 pins" id="854118970" label="J2"/>
-  </connector>
-  <connector name="Q0" id="connector14">
-   <part title="74HC595" id="854111450" label="U2"/>
-  </connector>
-  <connector name="Q0" id="connector14">
-   <part title="74HC595" id="854111452" label="U2"/>
+  <connector id="connector3" name="Q4">
+   <part id="854111421" label="U1" title="74HC595"/>
   </connector>
  </net>
  <net>
-  <connector name="Q7'" id="connector8">
-   <part title="74HC595" id="854111422" label="U1"/>
+  <connector id="connector5" name="pin6">
+   <part id="854116640" label="J1" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="Q7'" id="connector8">
-   <part title="74HC595" id="854111420" label="U1"/>
+  <connector id="connector5" name="pin6">
+   <part id="854116641" label="J1" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="DS" id="connector13">
-   <part title="74HC595" id="854111450" label="U2"/>
+  <connector id="connector4" name="Q5">
+   <part id="854111420" label="U1" title="74HC595"/>
   </connector>
-  <connector name="DS" id="connector13">
-   <part title="74HC595" id="854111452" label="U2"/>
-  </connector>
- </net>
- <net>
-  <connector name="Q1" id="connector0">
-   <part title="74HC595" id="854111450" label="U2"/>
-  </connector>
-  <connector name="Q1" id="connector0">
-   <part title="74HC595" id="854111452" label="U2"/>
-  </connector>
-  <connector name="pin2" id="connector1">
-   <part title="Generic female header - 8 pins" id="854118970" label="J2"/>
-  </connector>
-  <connector name="pin2" id="connector1">
-   <part title="Generic female header - 8 pins" id="854118972" label="J2"/>
+  <connector id="connector4" name="Q5">
+   <part id="854111421" label="U1" title="74HC595"/>
   </connector>
  </net>
  <net>
-  <connector name="pin8" id="connector7">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector3" name="pin4">
+   <part id="854116640" label="J1" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="pin8" id="connector7">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector3" name="pin4">
+   <part id="854116641" label="J1" title="Generic female header - 8 pins"/>
   </connector>
- </net>
- <net>
-  <connector name="Q7'" id="connector8">
-   <part title="74HC595" id="854111450" label="U2"/>
+  <connector id="connector2" name="Q3">
+   <part id="854111420" label="U1" title="74HC595"/>
   </connector>
-  <connector name="Q7'" id="connector8">
-   <part title="74HC595" id="854111452" label="U2"/>
+  <connector id="connector2" name="Q3">
+   <part id="854111421" label="U1" title="74HC595"/>
   </connector>
  </net>
  <net>
-  <connector name="D-" id="connector3">
-   <part title="USB Connectors" id="854109292" label="X1"/>
+  <connector id="connector2" name="pin3">
+   <part id="854116640" label="J1" title="Generic female header - 8 pins"/>
+  </connector>
+  <connector id="connector2" name="pin3">
+   <part id="854116641" label="J1" title="Generic female header - 8 pins"/>
+  </connector>
+  <connector id="connector1" name="Q2">
+   <part id="854111420" label="U1" title="74HC595"/>
+  </connector>
+  <connector id="connector1" name="Q2">
+   <part id="854111421" label="U1" title="74HC595"/>
   </connector>
  </net>
  <net>
-  <connector name="D+" id="connector2">
-   <part title="USB Connectors" id="854109292" label="X1"/>
+  <connector id="connector1" name="pin2">
+   <part id="854116640" label="J1" title="Generic female header - 8 pins"/>
+  </connector>
+  <connector id="connector1" name="pin2">
+   <part id="854116641" label="J1" title="Generic female header - 8 pins"/>
+  </connector>
+  <connector id="connector0" name="Q1">
+   <part id="854111420" label="U1" title="74HC595"/>
+  </connector>
+  <connector id="connector0" name="Q1">
+   <part id="854111421" label="U1" title="74HC595"/>
   </connector>
  </net>
  <net>
-  <connector name="pin39" id="connector38">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector13" name="DS">
+   <part id="854111420" label="U1" title="74HC595"/>
   </connector>
-  <connector name="pin39" id="connector38">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector13" name="DS">
+   <part id="854111421" label="U1" title="74HC595"/>
   </connector>
- </net>
- <net>
-  <connector name="pin28" id="connector27">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector0" name="pin1">
+   <part id="66220" label="IC1" title="AT89C51"/>
   </connector>
-  <connector name="pin28" id="connector27">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector0" name="pin1">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
   </connector>
  </net>
  <net>
-  <connector name="pin30" id="connector29">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector14" name="Q0">
+   <part id="854111421" label="U1" title="74HC595"/>
   </connector>
-  <connector name="pin30" id="connector29">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector14" name="Q0">
+   <part id="854111420" label="U1" title="74HC595"/>
   </connector>
- </net>
- <net>
-  <connector name="pin29" id="connector28">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector0" name="pin1">
+   <part id="854116640" label="J1" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="pin29" id="connector28">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector0" name="pin1">
+   <part id="854116641" label="J1" title="Generic female header - 8 pins"/>
   </connector>
  </net>
  <net>
-  <connector name="pin15" id="connector14">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector7" name="pin8">
+   <part id="854118970" label="J2" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="pin15" id="connector14">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector7" name="pin8">
+   <part id="854118971" label="J2" title="Generic female header - 8 pins"/>
   </connector>
- </net>
- <net>
-  <connector name="pin16" id="connector15">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector6" name="Q7">
+   <part id="854111450" label="U2" title="74HC595"/>
   </connector>
-  <connector name="pin16" id="connector15">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector6" name="Q7">
+   <part id="854111451" label="U2" title="74HC595"/>
   </connector>
  </net>
  <net>
-  <connector name="pin26" id="connector25">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector6" name="pin7">
+   <part id="854118970" label="J2" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="pin26" id="connector25">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector6" name="pin7">
+   <part id="854118971" label="J2" title="Generic female header - 8 pins"/>
   </connector>
- </net>
- <net>
-  <connector name="pin25" id="connector24">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector5" name="Q6">
+   <part id="854111450" label="U2" title="74HC595"/>
   </connector>
-  <connector name="pin25" id="connector24">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector5" name="Q6">
+   <part id="854111451" label="U2" title="74HC595"/>
   </connector>
  </net>
  <net>
-  <connector name="pin21" id="connector20">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector5" name="pin6">
+   <part id="854118970" label="J2" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="pin21" id="connector20">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector5" name="pin6">
+   <part id="854118971" label="J2" title="Generic female header - 8 pins"/>
   </connector>
- </net>
- <net>
-  <connector name="pin13" id="connector12">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector4" name="Q5">
+   <part id="854111450" label="U2" title="74HC595"/>
   </connector>
-  <connector name="pin13" id="connector12">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector4" name="Q5">
+   <part id="854111451" label="U2" title="74HC595"/>
   </connector>
  </net>
  <net>
-  <connector name="pin34" id="connector33">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector4" name="pin5">
+   <part id="854118970" label="J2" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="pin34" id="connector33">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector4" name="pin5">
+   <part id="854118971" label="J2" title="Generic female header - 8 pins"/>
   </connector>
- </net>
- <net>
-  <connector name="pin35" id="connector34">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector3" name="Q4">
+   <part id="854111450" label="U2" title="74HC595"/>
   </connector>
-  <connector name="pin35" id="connector34">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector3" name="Q4">
+   <part id="854111451" label="U2" title="74HC595"/>
   </connector>
  </net>
  <net>
-  <connector name="pin32" id="connector31">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector3" name="pin4">
+   <part id="854118970" label="J2" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="pin32" id="connector31">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector3" name="pin4">
+   <part id="854118971" label="J2" title="Generic female header - 8 pins"/>
   </connector>
- </net>
- <net>
-  <connector name="pin27" id="connector26">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector2" name="Q3">
+   <part id="854111450" label="U2" title="74HC595"/>
   </connector>
-  <connector name="pin27" id="connector26">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector2" name="Q3">
+   <part id="854111451" label="U2" title="74HC595"/>
   </connector>
  </net>
  <net>
-  <connector name="pin23" id="connector22">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector2" name="pin3">
+   <part id="854118970" label="J2" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="pin23" id="connector22">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector2" name="pin3">
+   <part id="854118971" label="J2" title="Generic female header - 8 pins"/>
   </connector>
- </net>
- <net>
-  <connector name="pin38" id="connector37">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector1" name="Q2">
+   <part id="854111450" label="U2" title="74HC595"/>
   </connector>
-  <connector name="pin38" id="connector37">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector1" name="Q2">
+   <part id="854111451" label="U2" title="74HC595"/>
   </connector>
  </net>
  <net>
-  <connector name="pin33" id="connector32">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector0" name="pin1">
+   <part id="854118971" label="J2" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="pin33" id="connector32">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector0" name="pin1">
+   <part id="854118970" label="J2" title="Generic female header - 8 pins"/>
   </connector>
- </net>
- <net>
-  <connector name="pin36" id="connector35">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector14" name="Q0">
+   <part id="854111450" label="U2" title="74HC595"/>
   </connector>
-  <connector name="pin36" id="connector35">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector14" name="Q0">
+   <part id="854111451" label="U2" title="74HC595"/>
   </connector>
  </net>
  <net>
-  <connector name="pin22" id="connector21">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector8" name="Q7'">
+   <part id="854111421" label="U1" title="74HC595"/>
   </connector>
-  <connector name="pin22" id="connector21">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector8" name="Q7'">
+   <part id="854111420" label="U1" title="74HC595"/>
   </connector>
- </net>
- <net>
-  <connector name="pin37" id="connector36">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector13" name="DS">
+   <part id="854111450" label="U2" title="74HC595"/>
   </connector>
-  <connector name="pin37" id="connector36">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector13" name="DS">
+   <part id="854111451" label="U2" title="74HC595"/>
   </connector>
  </net>
  <net>
-  <connector name="pin11" id="connector10">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector0" name="Q1">
+   <part id="854111450" label="U2" title="74HC595"/>
   </connector>
-  <connector name="pin11" id="connector10">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector0" name="Q1">
+   <part id="854111451" label="U2" title="74HC595"/>
   </connector>
- </net>
- <net>
-  <connector name="pin12" id="connector11">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector1" name="pin2">
+   <part id="854118970" label="J2" title="Generic female header - 8 pins"/>
   </connector>
-  <connector name="pin12" id="connector11">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector1" name="pin2">
+   <part id="854118971" label="J2" title="Generic female header - 8 pins"/>
   </connector>
  </net>
  <net>
-  <connector name="pin10" id="connector9">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector3" name="pin4">
+   <part id="66220" label="IC1" title="AT89C51"/>
   </connector>
-  <connector name="pin10" id="connector9">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector3" name="pin4">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
   </connector>
- </net>
- <net>
-  <connector name="pin14" id="connector13">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector0" name="Pin 0">
+   <part id="854183432" label="R2" title="1k Ω Resistor"/>
   </connector>
-  <connector name="pin14" id="connector13">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector0" name="Pin 0">
+   <part id="854183430" label="R2" title="1kΩ Resistor"/>
   </connector>
  </net>
  <net>
-  <connector name="pin24" id="connector23">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector7" name="pin8">
+   <part id="66220" label="IC1" title="AT89C51"/>
   </connector>
-  <connector name="pin24" id="connector23">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector7" name="pin8">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
   </connector>
  </net>
  <net>
-  <connector name="pin17" id="connector16">
-   <part title="AT89C51" id="66220" label="IC1"/>
+  <connector id="connector2" name="pin3">
+   <part id="854172780" label="J3" title="Generic female header - 4 pins"/>
   </connector>
-  <connector name="pin17" id="connector16">
-   <part title="DIP - 40 pins" id="66222" label="IC1"/>
+  <connector id="connector2" name="pin3">
+   <part id="854172781" label="J3" title="Generic female header - 4 pins"/>
+  </connector>
+  <connector id="connector2" name="C">
+   <part id="854170600" label="Q3" title="NPN-Transistor"/>
+  </connector>
+  <connector id="connector2" name="C">
+   <part id="854170601" label="Q3" title="NPN-Transistor"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector3" name="pin4">
+   <part id="854172780" label="J3" title="Generic female header - 4 pins"/>
+  </connector>
+  <connector id="connector3" name="pin4">
+   <part id="854172781" label="J3" title="Generic female header - 4 pins"/>
+  </connector>
+  <connector id="connector2" name="C">
+   <part id="854170630" label="Q4" title="NPN-Transistor"/>
+  </connector>
+  <connector id="connector2" name="C">
+   <part id="854170631" label="Q4" title="NPN-Transistor"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector0" name="pin1">
+   <part id="854172780" label="J3" title="Generic female header - 4 pins"/>
+  </connector>
+  <connector id="connector0" name="pin1">
+   <part id="854172781" label="J3" title="Generic female header - 4 pins"/>
+  </connector>
+  <connector id="connector2" name="C">
+   <part id="854170540" label="Q1" title="NPN-Transistor"/>
+  </connector>
+  <connector id="connector2" name="C">
+   <part id="854170541" label="Q1" title="NPN-Transistor"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector2" name="C">
+   <part id="854170570" label="Q2" title="NPN-Transistor"/>
+  </connector>
+  <connector id="connector2" name="C">
+   <part id="854170571" label="Q2" title="NPN-Transistor"/>
+  </connector>
+  <connector id="connector1" name="pin2">
+   <part id="854172780" label="J3" title="Generic female header - 4 pins"/>
+  </connector>
+  <connector id="connector1" name="pin2">
+   <part id="854172781" label="J3" title="Generic female header - 4 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector8" name="Q7'">
+   <part id="854111450" label="U2" title="74HC595"/>
+  </connector>
+  <connector id="connector8" name="Q7'">
+   <part id="854111451" label="U2" title="74HC595"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector2" name="D+">
+   <part id="854109291" label="X1" title="USB Connectors"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector3" name="D-">
+   <part id="854109291" label="X1" title="USB Connectors"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector37" name="pin38">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector37" name="pin38">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector34" name="pin35">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector34" name="pin35">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector10" name="pin11">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector10" name="pin11">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector24" name="pin25">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector24" name="pin25">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector38" name="pin39">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector38" name="pin39">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector12" name="pin13">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector12" name="pin13">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector14" name="pin15">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector14" name="pin15">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector35" name="pin36">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector35" name="pin36">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector9" name="pin10">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector9" name="pin10">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector11" name="pin12">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector11" name="pin12">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector28" name="pin29">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector28" name="pin29">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector20" name="pin21">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector20" name="pin21">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector32" name="pin33">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector32" name="pin33">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector33" name="pin34">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector33" name="pin34">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector29" name="pin30">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector29" name="pin30">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector15" name="pin16">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector15" name="pin16">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector25" name="pin26">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector25" name="pin26">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector31" name="pin32">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector31" name="pin32">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector23" name="pin24">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector23" name="pin24">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector26" name="pin27">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector26" name="pin27">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector21" name="pin22">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector21" name="pin22">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector36" name="pin37">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector36" name="pin37">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector16" name="pin17">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector16" name="pin17">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector22" name="pin23">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector22" name="pin23">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector13" name="pin14">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector13" name="pin14">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector27" name="pin28">
+   <part id="66220" label="IC1" title="AT89C51"/>
+  </connector>
+  <connector id="connector27" name="pin28">
+   <part id="66221" label="IC1" title="DIP - 40 pins"/>
+  </connector>
+ </net>
+ <net>
+  <connector id="connector1" name="B">
+   <part id="854170540" label="Q1" title="NPN-Transistor"/>
+  </connector>
+  <connector id="connector1" name="B">
+   <part id="854170541" label="Q1" title="NPN-Transistor"/>
+  </connector>
+  <connector id="connector1" name="Pin 1">
+   <part id="854183432" label="R2" title="1k Ω Resistor"/>
+  </connector>
+  <connector id="connector1" name="Pin 1">
+   <part id="854183430" label="R2" title="1kΩ Resistor"/>
   </connector>
  </net>
 </netlist>
