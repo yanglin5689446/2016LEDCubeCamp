@@ -1,4 +1,4 @@
-C51 COMPILER V9.56.0.0   MAIN                                                              09/21/2016 23:52:28 PAGE 1   
+C51 COMPILER V9.56.0.0   MAIN                                                              09/22/2016 15:24:16 PAGE 1   
 
 
 C51 COMPILER V9.56.0.0, COMPILATION OF MODULE MAIN
@@ -62,7 +62,7 @@ line level    source
   52           **函數: init
   53           **輸入: 無
   54           **輸出: 無
-C51 COMPILER V9.56.0.0   MAIN                                                              09/21/2016 23:52:28 PAGE 2   
+C51 COMPILER V9.56.0.0   MAIN                                                              09/22/2016 15:24:16 PAGE 2   
 
   55           **功能: configure AT89C51 and 74HC595
   56           * *************************************************************************************/
@@ -126,7 +126,7 @@ line level    source
  114   2        
  115   2            for (x = 0 ; x < 100 ; x++)
  116   2              display(2);
-C51 COMPILER V9.56.0.0   MAIN                                                              09/21/2016 23:52:28 PAGE 3   
+C51 COMPILER V9.56.0.0   MAIN                                                              09/22/2016 15:24:16 PAGE 3   
 
  117   2          
  118   2            if (isOn(2,2,2)){
@@ -141,7 +141,7 @@ line level    source
  127   2            for (x = 0 ; x < 100 ; x++)
  128   2              display(2);
  129   2              */
- 130   2            LED[0] = 0xAAAA;
+ 130   2            LED[0] = 0x1212;
  131   2            turnOn(1,0,1);
  132   2            turnOn(3,0,1);
  133   2            turnOn(1,1,1);
@@ -150,10 +150,10 @@ line level    source
  136   2            turnOn(3,2,1);
  137   2            turnOn(1,3,1);
  138   2            turnOn(3,3,1);
- 139   2            LED[2] = 0xAAAA;
+ 139   2            LED[2] = 0x5555;
  140   2            LED[3] = 0xAAAA;
  141   2            while(1){
- 142   3                display(10);
+ 142   3                display(0);
  143   3            }
  144   2        }
  145   1      }
@@ -190,7 +190,7 @@ line level    source
  176   1          unsigned i;
  177   1          for (i = 0 ; i < 5 ; i++);
  178   1      }
-C51 COMPILER V9.56.0.0   MAIN                                                              09/21/2016 23:52:28 PAGE 4   
+C51 COMPILER V9.56.0.0   MAIN                                                              09/22/2016 15:24:16 PAGE 4   
 
  179          
  180          
@@ -202,9 +202,9 @@ line level    source
  186   2                  DATA_PIN = !!(val & (1<<i));
  187   2              else
  188   2                  DATA_PIN = !!(val & (1<<(7-i)));
- 189   2              clock_delay();
+ 189   2              //clock_delay();
  190   2              CLOCK_PIN = 1;
- 191   2              clock_delay();
+ 191   2              //clock_delay();
  192   2              CLOCK_PIN = 0;
  193   2          }
  194   1      }
@@ -230,69 +230,72 @@ line level    source
  214          
  215          void display(unsigned char times)
  216          {
- 217   1          int i;
- 218   1          unsigned char high_byte,low_byte;
- 219   1          for (i = 0 ; i < 4 ; i ++ ){
- 220   2              high_byte = LED[i] & 0xFF;
- 221   2              low_byte =  LED[i] >> 8;
- 222   2              LATCH_PIN = 0;
- 223   2              shiftOut(LSBFIRST,high_byte);
- 224   2              shiftOut(LSBFIRST,low_byte);
- 225   2              LATCH_PIN = 1;  
- 226   2              P1 = P1 & 0x07;
- 227   2              /*
- 228   2                P1 |= 1 << (i+3);
- 229   2              */
- 230   2              /*switch(i){
- 231   2                  case 0:
- 232   2                  //    LAYER_1 = 1;
- 233   2                      P1_3 = 1;
- 234   2                      P1_4 = 0;
- 235   2                      P1_5 = 0;
- 236   2                      P1_6 = 0;
- 237   2                      break;
- 238   2                  case 1:
- 239   2                  //    LAYER_2 = 1;
- 240   2                      P1_3 = 0;
-C51 COMPILER V9.56.0.0   MAIN                                                              09/21/2016 23:52:28 PAGE 5   
+ 217   1          volatile int iter;
+ 218   1          unsigned char high_byte,low_byte,tmp_p1;
+ 219   1          for (iter = 0 ; iter < 4 ; iter ++ ){
+ 220   2              
+ 221   2              /*P1 = P1 & 0x07;
+ 222   2              if( iter == 0 ){
+ 223   2                LAYER_1 = 1;
+ 224   2              }else if( iter == 1 ){
+ 225   2                LAYER_2 = 1;
+ 226   2              }else if( iter == 2 ){
+ 227   2                LAYER_3 = 1;
+ 228   2              }else if( iter == 3){
+ 229   2                LAYER_4 = 1;
+ 230   2              }*/
+ 231   2              high_byte = LED[iter] & 0xFF;
+ 232   2              low_byte =  LED[iter] >> 8;
+ 233   2              LATCH_PIN = 0;
+ 234   2              shiftOut(LSBFIRST,high_byte);
+ 235   2              shiftOut(LSBFIRST,low_byte);
+ 236   2              //LATCH_PIN = 1;  
+ 237   2              //tmp_p1 = P1;
+ 238   2              /*
+ 239   2                P1 |= 1 << (i+3);
+ 240   2              */
+C51 COMPILER V9.56.0.0   MAIN                                                              09/22/2016 15:24:16 PAGE 5   
 
- 241   2                      P1_4 = 1;
- 242   2                      P1_5 = 0;
- 243   2                      P1_6 = 0;
- 244   2                      break;
- 245   2                  case 2:
- 246   2                  //    LAYER_3 = 1;
- 247   2                      P1_3 = 0;
- 248   2                      P1_4 = 0;
- 249   2                      P1_5 = 1;
- 250   2                      P1_6 = 0;
- 251   2                      break;
- 252   2                  case 3:
- 253   2                  //    LAYER_4 = 1;
- 254   2                      P1_3 = 0;
- 255   2                      P1_4 = 0;
- 256   2                      P1_5 = 1;
- 257   2                      P1_6 = 0;
- 258   2                      break;
- 259   2                  default:
- 260   2                      LAYER_1 = 1;
- 261   2                      LAYER_2 = 1;
- 262   2                      LAYER_3 = 1;
- 263   2                      LAYER_4 = 1;
- 264   2              }*/
- 265   2              
- 266   2              if( i == 0 ){
- 267   3                LAYER_1 = 1;
- 268   3              }else if( i == 1 ){
- 269   3                LAYER_2 = 1;
- 270   3              }else if( i == 2 ){
- 271   3                LAYER_3 = 1;
- 272   3              }else if( i == 3){
- 273   3                LAYER_4 = 1;
+ 241   2              P2 = 0x00;
+ 242   2              switch(iter){
+ 243   3                  case 0:
+ 244   3                  //    LAYER_1 = 1;
+ 245   3                      //P1 = (tmp_p1 & 0x07) | 0x08;
+ 246   3                      P1 = 0x0C;
+ 247   3                      //P2_0 = 1;
+ 248   3                      break;
+ 249   3                  case 1:
+ 250   3                  //    LAYER_2 = 1;
+ 251   3                      //P1 = (tmp_p1 & 0x07) | 0x10;
+ 252   3                      P1 = 0x14;
+ 253   3                      //P2_0 = 1;
+ 254   3                      break;
+ 255   3                  case 2:
+ 256   3                  //    LAYER_3 = 1;
+ 257   3                      //P1 = (tmp_p1 & 0x07) | 0x20;
+ 258   3                      P1 = 0x24;
+ 259   3                      //P2_0 = 1;
+ 260   3                      break;
+ 261   3                  case 3:
+ 262   3                  //    LAYER_4 = 1;
+ 263   3                      //P1 = (tmp_p1 & 0x40) | 0x40;
+ 264   3                      P1 = 0x44;
+ 265   3                      //P2_0 = 1;
+ 266   3                      break;
+ 267   3                  default:
+ 268   3                      /*LAYER_1 = 1;
+ 269   3                      LAYER_2 = 1;
+ 270   3                      LAYER_3 = 1;
+ 271   3                      LAYER_4 = 1;*/
+ 272   3                      P2_1 = 1;
+ 273   3                  break;
  274   3              }
- 275   2              delay(times);
- 276   2          }
- 277   1      }
+ 275   2              
+ 276   2              
+ 277   2              delay(times);
+ 278   2          }
+ 279   1      }
+*** WARNING C280 IN LINE 218 OF main.c: 'tmp_p1': unreferenced local variable
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
@@ -300,10 +303,10 @@ MODULE INFORMATION:   STATIC OVERLAYABLE
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =      8       5
+   DATA SIZE        =      8       6
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
 
-C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

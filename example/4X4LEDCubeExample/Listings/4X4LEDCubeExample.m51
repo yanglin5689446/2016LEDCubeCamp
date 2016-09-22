@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        09/21/2016  23:52:28  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/22/2016  15:24:53  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -23,16 +23,16 @@ LINK MAP OF MODULE:  .\Objects\4X4LEDCubeExample (?C_STARTUP)
             * * * * * * *   D A T A   M E M O R Y   * * * * * * *
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
             DATA    0008H     0008H     UNIT         ?DT?MAIN
-            DATA    0010H     0003H     UNIT         _DATA_GROUP_
-            DATA    0013H     0001H     UNIT         ?DT?_TURNOFF?MAIN
-            IDATA   0014H     0001H     UNIT         ?STACK
+            DATA    0010H     0004H     UNIT         _DATA_GROUP_
+            DATA    0014H     0001H     UNIT         ?DT?_TURNOFF?MAIN
+            IDATA   0015H     0001H     UNIT         ?STACK
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
                     0003H     07FDH                  *** GAP ***
-            CODE    0800H     0073H     UNIT         ?PR?_DISPLAY?MAIN
-            CODE    0873H     0064H     UNIT         ?PR?_SHIFTOUT?MAIN
-            CODE    08D7H     005AH     UNIT         ?PR?MAIN?MAIN
+            CODE    0800H     0079H     UNIT         ?PR?_DISPLAY?MAIN
+            CODE    0879H     005CH     UNIT         ?PR?MAIN?MAIN
+            CODE    08D5H     005CH     UNIT         ?PR?_SHIFTOUT?MAIN
             CODE    0931H     0038H     UNIT         ?PR?_TURNON?MAIN
             CODE    0969H     0036H     UNIT         ?PR?_TURNOFF?MAIN
             CODE    099FH     0024H     UNIT         ?PR?_ISON?MAIN
@@ -59,15 +59,12 @@ SEGMENT                          DATA_GROUP
 
 ?PR?_TURNON?MAIN               0010H    0001H
 
-BL51 BANKED LINKER/LOCATER V6.22                                                      09/21/2016  23:52:28  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/22/2016  15:24:53  PAGE 2
 
 
-?PR?_DISPLAY?MAIN              0010H    0003H
+?PR?_DISPLAY?MAIN              0010H    0004H
   +--> ?PR?_SHIFTOUT?MAIN
   +--> ?PR?_DELAY?MAIN
-
-?PR?_SHIFTOUT?MAIN             -----    -----
-  +--> ?PR?CLOCK_DELAY?MAIN
 
 
 
@@ -78,7 +75,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\4X4LEDCubeExample (?C_STARTUP)
 
   -------         MODULE        ?C_STARTUP
   C:0A12H         SEGMENT       ?C_C51STARTUP
-  I:0014H         SEGMENT       ?STACK
+  I:0015H         SEGMENT       ?STACK
   C:0000H         PUBLIC        ?C_STARTUP
   D:00E0H         SYMBOL        ACC
   D:00F0H         SYMBOL        B
@@ -114,44 +111,46 @@ SYMBOL TABLE OF MODULE:  .\Objects\4X4LEDCubeExample (?C_STARTUP)
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0090H         PUBLIC        P1
   C:0A03H         PUBLIC        clock_delay
+  D:00A0H         PUBLIC        P2
   C:0935H         PUBLIC        _turnOn
   B:0090H.0       PUBLIC        P1_0
   C:09C3H         PUBLIC        _delay
   B:0090H.1       PUBLIC        P1_1
+  B:00A0H.1       PUBLIC        P2_1
   B:0090H.2       PUBLIC        P1_2
-BL51 BANKED LINKER/LOCATER V6.22                                                      09/21/2016  23:52:28  PAGE 3
-
-
   B:0090H.3       PUBLIC        P1_3
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/22/2016  15:24:53  PAGE 3
+
+
   B:0090H.4       PUBLIC        P1_4
   B:0090H.5       PUBLIC        P1_5
   B:0090H.6       PUBLIC        P1_6
   C:099FH         PUBLIC        _isOn
-  C:08D7H         PUBLIC        main
+  C:0879H         PUBLIC        main
   C:09E3H         PUBLIC        init
   D:0008H         PUBLIC        LED
-  C:0873H         PUBLIC        _shiftOut
+  C:08D5H         PUBLIC        _shiftOut
   C:0969H         PUBLIC        _turnOff
   C:0800H         PUBLIC        _display
   -------         PROC          MAIN
-  C:08D7H         LINE#         99
-  C:08D7H         LINE#         100
-  C:08D7H         LINE#         102
-  C:08DAH         LINE#         103
-  C:08DAH         LINE#         130
-  C:08E0H         LINE#         131
-  C:08E9H         LINE#         132
-  C:08F2H         LINE#         133
-  C:08F7H         LINE#         134
-  C:08FCH         LINE#         135
-  C:0905H         LINE#         136
-  C:090EH         LINE#         137
-  C:0917H         LINE#         138
-  C:0920H         LINE#         139
-  C:0926H         LINE#         140
-  C:092AH         LINE#         141
-  C:092AH         LINE#         142
-  C:092FH         LINE#         143
+  C:0879H         LINE#         99
+  C:0879H         LINE#         100
+  C:0879H         LINE#         102
+  C:087CH         LINE#         103
+  C:087CH         LINE#         130
+  C:0882H         LINE#         131
+  C:088BH         LINE#         132
+  C:0894H         LINE#         133
+  C:0899H         LINE#         134
+  C:089EH         LINE#         135
+  C:08A7H         LINE#         136
+  C:08B0H         LINE#         137
+  C:08B9H         LINE#         138
+  C:08C2H         LINE#         139
+  C:08C8H         LINE#         140
+  C:08CEH         LINE#         141
+  C:08CEH         LINE#         142
+  C:08D3H         LINE#         143
   -------         ENDPROC       MAIN
   -------         PROC          _DELAY
   D:0006H         SYMBOL        x
@@ -179,10 +178,10 @@ SYMBOL TABLE OF MODULE:  .\Objects\4X4LEDCubeExample (?C_STARTUP)
   C:09F6H         LINE#         169
   C:09FAH         LINE#         170
   C:09FEH         LINE#         171
-BL51 BANKED LINKER/LOCATER V6.22                                                      09/21/2016  23:52:28  PAGE 4
-
-
   C:0A02H         LINE#         172
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/22/2016  15:24:53  PAGE 4
+
+
   -------         ENDPROC       INIT
   -------         PROC          CLOCK_DELAY
   -------         DO            
@@ -199,21 +198,19 @@ SYMBOL TABLE OF MODULE:  .\Objects\4X4LEDCubeExample (?C_STARTUP)
   -------         DO            
   D:0003H         SYMBOL        i
   -------         ENDDO         
-  C:0873H         LINE#         181
-  C:0875H         LINE#         182
-  C:0875H         LINE#         184
-  C:0877H         LINE#         185
-  C:087CH         LINE#         186
-  C:089CH         LINE#         188
-  C:08C6H         LINE#         189
-  C:08C9H         LINE#         190
-  C:08CBH         LINE#         191
-  C:08CEH         LINE#         192
-  C:08D0H         LINE#         193
-  C:08D6H         LINE#         194
+  C:08D5H         LINE#         181
+  C:08D7H         LINE#         182
+  C:08D7H         LINE#         184
+  C:08D9H         LINE#         185
+  C:08DEH         LINE#         186
+  C:08FEH         LINE#         188
+  C:0928H         LINE#         190
+  C:092AH         LINE#         192
+  C:092CH         LINE#         193
+  C:0930H         LINE#         194
   -------         ENDPROC       _SHIFTOUT
-  -------         PROC          L?0057
-  -------         ENDPROC       L?0057
+  -------         PROC          L?0056
+  -------         ENDPROC       L?0056
   -------         PROC          _TURNON
   D:0010H         SYMBOL        x
   D:0005H         SYMBOL        y
@@ -224,7 +221,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\4X4LEDCubeExample (?C_STARTUP)
   C:0968H         LINE#         199
   -------         ENDPROC       _TURNON
   -------         PROC          _TURNOFF
-  D:0013H         SYMBOL        x
+  D:0014H         SYMBOL        x
   D:0005H         SYMBOL        y
   D:0003H         SYMBOL        z
   C:0969H         LINE#         201
@@ -239,42 +236,53 @@ SYMBOL TABLE OF MODULE:  .\Objects\4X4LEDCubeExample (?C_STARTUP)
   C:099FH         LINE#         206
   C:099FH         LINE#         207
   C:099FH         LINE#         212
-BL51 BANKED LINKER/LOCATER V6.22                                                      09/21/2016  23:52:28  PAGE 5
-
-
   C:09C2H         LINE#         213
   -------         ENDPROC       _ISON
   -------         PROC          _DISPLAY
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/22/2016  15:24:53  PAGE 5
+
+
   D:0010H         SYMBOL        times
   -------         DO            
-  D:0011H         SYMBOL        i
+  D:0011H         SYMBOL        iter
   D:0004H         SYMBOL        high_byte
   D:0002H         SYMBOL        low_byte
+  D:0013H         SYMBOL        tmp_p1
   -------         ENDDO         
   C:0800H         LINE#         215
   C:0802H         LINE#         216
   C:0802H         LINE#         219
-  C:0807H         LINE#         220
-  C:0813H         LINE#         221
-  C:0817H         LINE#         222
-  C:0819H         LINE#         223
-  C:0820H         LINE#         224
-  C:0827H         LINE#         225
-  C:0829H         LINE#         226
-  C:082CH         LINE#         266
-  C:0832H         LINE#         267
-  C:0834H         LINE#         268
-  C:083EH         LINE#         269
-  C:0840H         LINE#         270
-  C:084AH         LINE#         271
-  C:084CH         LINE#         272
-  C:0856H         LINE#         273
-  C:0858H         LINE#         274
-  C:0858H         LINE#         275
-  C:085FH         LINE#         276
-  C:0872H         LINE#         277
+  C:0807H         LINE#         231
+  C:0812H         LINE#         232
+  C:0820H         LINE#         233
+  C:0822H         LINE#         234
+  C:0829H         LINE#         235
+  C:0830H         LINE#         241
+  C:0833H         LINE#         242
+  C:0846H         LINE#         243
+  C:0846H         LINE#         246
+  C:0849H         LINE#         248
+  C:084BH         LINE#         249
+  C:084BH         LINE#         252
+  C:084EH         LINE#         254
+  C:0850H         LINE#         255
+  C:0850H         LINE#         258
+  C:0853H         LINE#         260
+  C:0855H         LINE#         261
+  C:0855H         LINE#         264
+  C:0858H         LINE#         266
+  C:085AH         LINE#         267
+  C:085AH         LINE#         272
+  C:085CH         LINE#         273
+  C:085CH         LINE#         274
+  C:085CH         LINE#         277
+  C:0863H         LINE#         278
+  C:0878H         LINE#         279
   -------         ENDPROC       _DISPLAY
   -------         ENDMOD        MAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CLOCK_DELAY?MAIN
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_TURNOFF?MAIN
@@ -286,5 +294,5 @@ SYMBOL TABLE OF MODULE:  .\Objects\4X4LEDCubeExample (?C_STARTUP)
 * RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0221H BYTE (26%) *
 ******************************************************************************
 
-Program Size: data=21.0 xdata=0 code=545
-LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)
+Program Size: data=22.0 xdata=0 code=545
+LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)

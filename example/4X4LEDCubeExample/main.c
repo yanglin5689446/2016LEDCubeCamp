@@ -127,7 +127,7 @@ void main()
 			for (x = 0 ; x < 100 ; x++)
 				display(2);
 				*/
-			LED[0] = 0xAAAA;
+			LED[0] = 0x1212;
 			turnOn(1,0,1);
 			turnOn(3,0,1);
 			turnOn(1,1,1);
@@ -136,10 +136,10 @@ void main()
 			turnOn(3,2,1);
 			turnOn(1,3,1);
 			turnOn(3,3,1);
-			LED[2] = 0xAAAA;
+			LED[2] = 0x5555;
 			LED[3] = 0xAAAA;
 			while(1){
-					display(10);
+					display(0);
 			}
 	}
 }
@@ -186,9 +186,9 @@ void shiftOut(unsigned char BitOrder,unsigned char val)
             DATA_PIN = !!(val & (1<<i));
         else
             DATA_PIN = !!(val & (1<<(7-i)));
-        clock_delay();
+        //clock_delay();
         CLOCK_PIN = 1;
-        clock_delay();
+        //clock_delay();
         CLOCK_PIN = 0;
     }
 }
@@ -205,73 +205,57 @@ void turnOff(unsigned char x, unsigned char y, unsigned char z)
 
 unsigned char isOn(unsigned char x, unsigned char y, unsigned char z)
 {
-    /*if (( LED[z] >> (( y << 2 ) + x ) ) & 1)
-        return ON;
-    else
-        return OFF;*/
     return ( LED[z] >> (( y << 2 ) + x ) ) & 1 ;
 }
 
 void display(unsigned char times)
 {
-		int i;
-    unsigned char high_byte,low_byte;
-    for (i = 0 ; i < 4 ; i ++ ){
-        high_byte = LED[i] & 0xFF;
-        low_byte =  LED[i] >> 8;
+		volatile int iter;
+    unsigned char high_byte,low_byte,tmp_p1;
+    for (iter = 0 ; iter < 4 ; iter ++ ){
+        high_byte = LED[iter] & 0xFF;
+        low_byte =  LED[iter] >> 8;
         LATCH_PIN = 0;
         shiftOut(LSBFIRST,high_byte);
         shiftOut(LSBFIRST,low_byte);
-        LATCH_PIN = 1;  
-        P1 = P1 & 0x07;
-        /*
-          P1 |= 1 << (i+3);
-        */
-        /*switch(i){
+        //LATCH_PIN = 1;  
+        
+				P2 = 0x00;
+        switch(iter){
             case 0:
             //    LAYER_1 = 1;
-                P1_3 = 1;
-								P1_4 = 0;
-								P1_5 = 0;
-								P1_6 = 0;
+                //P1 = (tmp_p1 & 0x07) | 0x08;
+								P1 = 0x0C;
+								//P2_0 = 1;
 								break;
             case 1:
             //    LAYER_2 = 1;
-								P1_3 = 0;
-								P1_4 = 1;
-								P1_5 = 0;
-								P1_6 = 0;
+								//P1 = (tmp_p1 & 0x07) | 0x10;
+								P1 = 0x14;
+								//P2_0 = 1;
 								break;
             case 2:
             //    LAYER_3 = 1;
-								P1_3 = 0;
-								P1_4 = 0;
-								P1_5 = 1;
-								P1_6 = 0;
-                break;
+								//P1 = (tmp_p1 & 0x07) | 0x20;
+                P1 = 0x24;
+								//P2_0 = 1;
+								break;
             case 3:
             //    LAYER_4 = 1;
-								P1_3 = 0;
-								P1_4 = 0;
-								P1_5 = 1;
-								P1_6 = 0;
+								//P1 = (tmp_p1 & 0x40) | 0x40;
+								P1 = 0x44;
+								//P2_0 = 1;
                 break;
 						default:
-								LAYER_1 = 1;
+								/*LAYER_1 = 1;
 								LAYER_2 = 1;
 								LAYER_3 = 1;
-								LAYER_4 = 1;
-        }*/
+								LAYER_4 = 1;*/
+								P2_1 = 1;
+						break;
+        }
 				
-				if( i == 0 ){
-					LAYER_1 = 1;
-				}else if( i == 1 ){
-					LAYER_2 = 1;
-				}else if( i == 2 ){
-					LAYER_3 = 1;
-				}else if( i == 3){
-					LAYER_4 = 1;
-				}
+				
         delay(times);
     }
 }
