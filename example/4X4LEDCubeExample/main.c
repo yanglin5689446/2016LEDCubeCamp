@@ -151,111 +151,93 @@ void main()
  * *************************************************************************************/
 void delay(unsigned int x)
 {
-    unsigned int i,j;
-    for (i = 0 ; i < x ; i++ )
-       for (j = 0 ; j < 160 ; j++ );
+	unsigned int i,j;
+	for (i = 0 ; i < x ; i++ )
+		for (j = 0 ; j < 160 ; j++ );
 }
 
 void init()
 {
-    CLOCK_PIN = 0;
-    LATCH_PIN = 1;
-    DATA_PIN = 0;
-    LAYER_1 = 0;
-    LAYER_2 = 0;
-    LAYER_3 = 0;
-    LAYER_4 = 0;
-		LED[0] = 0;
-		LED[1] = 0;
-		LED[2] = 0;
-		LED[3] = 0;
+	CLOCK_PIN = 0;
+  LATCH_PIN = 1;
+  DATA_PIN = 0;
+  LAYER_1 = 0;
+  LAYER_2 = 0;
+  LAYER_3 = 0;
+  LAYER_4 = 0;
+	LED[0] = 0;
+	LED[1] = 0;
+	LED[2] = 0;
+	LED[3] = 0;
 }
 
 void clock_delay()
 {
-    unsigned i;
-    for (i = 0 ; i < 5 ; i++);
+  unsigned char i;
+  for (i = 0 ; i < 5 ; i++);
 }
 
 
 void shiftOut(unsigned char BitOrder,unsigned char val)
 {
-    unsigned char i;
-    for (i = 0 ; i < 8 ; i++){
-        if (BitOrder == LSBFIRST)
-            DATA_PIN = !!(val & (1<<i));
-        else
-            DATA_PIN = !!(val & (1<<(7-i)));
-        //clock_delay();
-        CLOCK_PIN = 1;
-        //clock_delay();
-        CLOCK_PIN = 0;
-    }
+	unsigned char i;
+	for (i = 0 ; i < 8 ; i++){
+		if (BitOrder == LSBFIRST)
+			DATA_PIN = !!(val & (1<<i));
+    else
+      DATA_PIN = !!(val & (1<<(7-i)));
+    //clock_delay();
+		CLOCK_PIN = 1;
+		//clock_delay();
+    CLOCK_PIN = 0;
+  }
 }
 
 void turnOn(unsigned char x, unsigned char y, unsigned char z)
 {
-    LED[z] |= ( 1 << ((y << 2)+x));
+	LED[z] |= ( 1 << ((y << 2)+x));
 }
 
 void turnOff(unsigned char x, unsigned char y, unsigned char z)
 {
-    LED[z] &= ~(1 << ((y<<2)+x));
+	LED[z] &= ~(1 << ((y<<2)+x));
 }
 
 unsigned char isOn(unsigned char x, unsigned char y, unsigned char z)
 {
-    return ( LED[z] >> (( y << 2 ) + x ) ) & 1 ;
+	return ( LED[z] >> (( y << 2 ) + x ) ) & 1 ;
 }
 
 void display(unsigned char times)
 {
-		volatile int iter;
-    unsigned char high_byte,low_byte,tmp_p1;
-    for (iter = 0 ; iter < 4 ; iter ++ ){
-        high_byte = LED[iter] & 0xFF;
-        low_byte =  LED[iter] >> 8;
-        LATCH_PIN = 0;
-        shiftOut(LSBFIRST,high_byte);
-        shiftOut(LSBFIRST,low_byte);
-        //LATCH_PIN = 1;  
+	volatile int iter;
+  unsigned char high_byte,low_byte,tmp_p1;
+  for (iter = 0 ; iter < 4 ; iter ++ ){
+    high_byte = LED[iter] & 0xFF;
+    low_byte =  LED[iter] >> 8;
+    LATCH_PIN = 0;
+    shiftOut(LSBFIRST,high_byte);
+    shiftOut(LSBFIRST,low_byte);
+    //LATCH_PIN = 1;  
         
-				P2 = 0x00;
-        switch(iter){
-            case 0:
-            //    LAYER_1 = 1;
-                //P1 = (tmp_p1 & 0x07) | 0x08;
-								P1 = 0x0C;
-								//P2_0 = 1;
-								break;
-            case 1:
-            //    LAYER_2 = 1;
-								//P1 = (tmp_p1 & 0x07) | 0x10;
-								P1 = 0x14;
-								//P2_0 = 1;
-								break;
-            case 2:
-            //    LAYER_3 = 1;
-								//P1 = (tmp_p1 & 0x07) | 0x20;
-                P1 = 0x24;
-								//P2_0 = 1;
-								break;
-            case 3:
-            //    LAYER_4 = 1;
-								//P1 = (tmp_p1 & 0x40) | 0x40;
-								P1 = 0x44;
-								//P2_0 = 1;
-                break;
-						default:
-								/*LAYER_1 = 1;
-								LAYER_2 = 1;
-								LAYER_3 = 1;
-								LAYER_4 = 1;*/
-								P2_1 = 1;
-						break;
-        }
-				
-				
-        delay(times);
-    }
+		P2 = 0x00;
+    switch(iter){
+      case 0:
+				P1 = 0x0C;
+					break;
+      case 1:
+				P1 = 0x14;
+				break;
+      case 2:
+        P1 = 0x24;
+				break;
+      case 3:
+				P1 = 0x44;
+        break;
+			default:
+				P2_1 = 1;
+				break;
+    }		
+    delay(times);
+  }
 }
