@@ -1,9 +1,9 @@
-C51 COMPILER V9.56.0.0   MAIN                                                              09/23/2016 23:49:13 PAGE 1   
+C51 COMPILER V9.56.0.0   MAIN                                                              09/23/2016 17:03:45 PAGE 1   
 
 
 C51 COMPILER V9.56.0.0, COMPILATION OF MODULE MAIN
 OBJECT MODULE PLACED IN .\Objects\main.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.exe main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
                     -.lst) TABS(2) OBJECT(.\Objects\main.obj)
 
 line level    source
@@ -15,225 +15,233 @@ line level    source
    5           *
    6           ***************************************************************************************/
    7          #include <regx51.h>
-   8          
-   9          /****************************************************************************************
-  10           *      don't edit this section
-  11           *      不要修改以下這段code
-  12           * *************************************************************************************/
-  13          #define DATA_PIN P1_0   //DS
-  14          #define CLOCK_PIN P1_1  //SHCP
-  15          #define LATCH_PIN P1_2  //STCP
-  16          #define LAYER_1 P1_3
-  17          #define LAYER_2 P1_4
-  18          #define LAYER_3 P1_5
-  19          #define LAYER_4 P1_6
-  20          
-  21          #define MSBFIRST 1
-  22          #define LSBFIRST 2
-  23          #define HIGH 1
-  24          #define LOW 0
-  25          #define ON 1
-  26          #define OFF 0
-  27          
-  28          short LED[4];   //LED condition
-  29          
+   8          #include <stdlib.h>
+   9          
+  10          /****************************************************************************************
+  11           *      don't edit this section
+  12           *      不要修改以下這段code
+  13           * *************************************************************************************/
+  14          #define DATA_PIN P1_0   //DS
+  15          #define CLOCK_PIN P1_1  //SHCP
+  16          #define LATCH_PIN P1_2  //STCP
+  17          #define LAYER_1 P1_3
+  18          #define LAYER_2 P1_4
+  19          #define LAYER_3 P1_5
+  20          #define LAYER_4 P1_6
+  21          
+  22          #define MSBFIRST 1
+  23          #define LSBFIRST 2
+  24          #define HIGH 1
+  25          #define LOW 0
+  26          #define ON 1
+  27          #define OFF 0
+  28          
+  29          short LED[4];   //LED condition
   30          
-  31          /****************************************************************************************
-  32           **函數: shiftOut
-  33           **輸入: BitOrder(LSB first or MSB first),val
-  34           **輸出: 無
-  35           **功能: shift out data to DS
-  36           **************************************************************************************/
-  37          void shiftOut(unsigned char BitOrder,unsigned char val);
-  38          void clock_delay();
-  39          /****************************************************************************************
-  40           *      you can call these function
-  41           *      你可以使用以下函式
-  42           **************************************************************************************/
-  43          
-  44          /****************************************************************************************
-  45           **函數: init
-  46           **輸入: 無
-  47           **輸出: 無
-  48           **功能: configure AT89C51 and 74HC595
-  49           * *************************************************************************************/
-  50          void init();
-  51          
-  52          /****************************************************************************************
-  53           **函數: delay
-  54           **輸入: x
-C51 COMPILER V9.56.0.0   MAIN                                                              09/23/2016 23:49:13 PAGE 2   
+  31          
+  32          /****************************************************************************************
+  33           **函數: shiftOut
+  34           **輸入: BitOrder(LSB first or MSB first),val
+  35           **輸出: 無
+  36           **功能: shift out data to DS
+  37           **************************************************************************************/
+  38          void shiftOut(unsigned char BitOrder,unsigned char val);
+  39          void clock_delay();
+  40          /****************************************************************************************
+  41           *      you can call these function
+  42           *      你可以使用以下函式
+  43           **************************************************************************************/
+  44          
+  45          /****************************************************************************************
+  46           **函數: init
+  47           **輸入: 無
+  48           **輸出: 無
+  49           **功能: configure AT89C51 and 74HC595
+  50           * *************************************************************************************/
+  51          void init();
+  52          
+  53          /****************************************************************************************
+  54           **函數: delay
+C51 COMPILER V9.56.0.0   MAIN                                                              09/23/2016 17:03:45 PAGE 2   
 
-  55           **輸出: 無
-  56           **功能: delay 1ms
-  57           **************************************************************************************/
-  58          void delay(unsigned int);
-  59          
-  60          /****************************************************************************************
-  61           **函數: turnOn
-  62           **輸入: x,y,x (LED的座標)
-  63           **輸出: 無
-  64           **功能: turn on one LED in data
-  65           *       在資料庫中開啟一個LED
-  66           * *************************************************************************************/
-  67          void turnOn(unsigned char x, unsigned char y, unsigned char z);
-  68          
-  69          /****************************************************************************************
-  70           **函數: turnOff
-  71           **輸入: x,y,x (LED的座標)
-  72           **輸出: 無
-  73           **功能: turn off one LED in data
-  74           *       在資料庫中關閉一個LED
-  75           **************************************************************************************/
-  76          void turnOff(unsigned char x, unsigned char y, unsigned char z);
-  77          
-  78          /****************************************************************************************
-  79           **函數: isOn
-  80           **輸入: x,y,x (LED的座標)
-  81           **輸出: 無
-  82           **功能: check one LED is ON
-  83           *       檢查一個LED是否開啟或關閉
-  84           * *************************************************************************************/
-  85          unsigned char isOn(unsigned char x, unsigned char y, unsigned char z);
-  86          
-  87          /****************************************************************************************
-  88           **函數: display
-  89           **輸入: times  (loop次數)
-  90           **輸出: 無
-  91           **功能: Starting Display LED cube by this function
-  92           *       用這個函式開始顯示LED 方塊
-  93           **************************************************************************************/
-  94          void display(unsigned int times);
-  95          
-  96          /****************************************************************************************
-  97           *      main function
-  98           *      主函式
-  99           ***************************************************************************************/
- 100          void main()
- 101          {
- 102   1          //int x;
- 103   1          init();
- 104   1          while(1){
- 105   2              LED[0] = 0x1212;
- 106   2              turnOn(3,0,1);
- 107   2              turnOn(1,1,1);
- 108   2              turnOn(3,1,1);
- 109   2              turnOn(1,2,1);
- 110   2              turnOn(3,2,1);
- 111   2              turnOn(1,3,1);
- 112   2              turnOn(3,3,1);
- 113   2              LED[2] = 0x5555;
- 114   2              LED[3] = 0xAAAA;
- 115   2              while(1){
- 116   3                  display(0);
-C51 COMPILER V9.56.0.0   MAIN                                                              09/23/2016 23:49:13 PAGE 3   
+  55           **輸入: x
+  56           **輸出: 無
+  57           **功能: delay 1ms
+  58           **************************************************************************************/
+  59          void delay(unsigned int);
+  60          
+  61          /****************************************************************************************
+  62           **函數: turnOn
+  63           **輸入: x,y,x (LED的座標)
+  64           **輸出: 無
+  65           **功能: turn on one LED in data
+  66           *       在資料庫中開啟一個LED
+  67           * *************************************************************************************/
+  68          void turnOn(unsigned char x, unsigned char y, unsigned char z);
+  69          
+  70          /****************************************************************************************
+  71           **函數: turnOff
+  72           **輸入: x,y,x (LED的座標)
+  73           **輸出: 無
+  74           **功能: turn off one LED in data
+  75           *       在資料庫中關閉一個LED
+  76           **************************************************************************************/
+  77          void turnOff(unsigned char x, unsigned char y, unsigned char z);
+  78          
+  79          /****************************************************************************************
+  80           **函數: isOn
+  81           **輸入: x,y,x (LED的座標)
+  82           **輸出: 無
+  83           **功能: check one LED is ON
+  84           *       檢查一個LED是否開啟或關閉
+  85           * *************************************************************************************/
+  86          unsigned char isOn(unsigned char x, unsigned char y, unsigned char z);
+  87          
+  88          /****************************************************************************************
+  89           **函數: display
+  90           **輸入: times  (loop次數)
+  91           **輸出: 無
+  92           **功能: Starting Display LED cube by this function
+  93           *       用這個函式開始顯示LED 方塊
+  94           **************************************************************************************/
+  95          void display(unsigned int times);
+  96          
+  97          /****************************************************************************************
+  98           *      main function
+  99           *      主函式
+ 100           ***************************************************************************************/
+ 101          void main()
+ 102          {
+ 103   1          //int x;
+ 104   1          init();
+ 105   1          while(1){
+ 106   2              /*LED[0] = 0x1212;
+ 107   2              turnOn(3,0,1);
+ 108   2              turnOn(1,1,1);
+ 109   2              turnOn(3,1,1);
+ 110   2              turnOn(1,2,1);
+ 111   2              turnOn(3,2,1);
+ 112   2              turnOn(1,3,1);
+ 113   2              turnOn(3,3,1);
+ 114   2              LED[2] = 0x5555;
+ 115   2              LED[3] = 0xAAAA;*/
+ 116   2              while(1){
+C51 COMPILER V9.56.0.0   MAIN                                                              09/23/2016 17:03:45 PAGE 3   
 
- 117   3              }
- 118   2          }
- 119   1      }
- 120          
- 121          
- 122          /****************************************************************************************
- 123           *      don't edit this section
- 124           *      不要修改以下這段code
- 125           * *************************************************************************************/
- 126          void delay(unsigned int x)
- 127          {
- 128   1          unsigned int i,j;
- 129   1          for (i = 0 ; i < x ; i++ )
- 130   1              for (j = 0 ; j < 240 ; j++ );
- 131   1      }
- 132          
- 133          void init()
- 134          {
- 135   1          CLOCK_PIN = 0;
- 136   1          LATCH_PIN = 1;
- 137   1          DATA_PIN = 0;
- 138   1          LAYER_1 = 0;
- 139   1          LAYER_2 = 0;
- 140   1          LAYER_3 = 0;
- 141   1          LAYER_4 = 0;
- 142   1          LED[0] = 0;
- 143   1          LED[1] = 0;
- 144   1          LED[2] = 0;
- 145   1          LED[3] = 0;
- 146   1      }
- 147          
- 148          void clock_delay()
- 149          {
- 150   1          unsigned char i;
- 151   1          for (i = 0 ; i < 5 ; i++);
- 152   1      }
- 153          
- 154          
- 155          void shiftOut(unsigned char BitOrder,unsigned char val)
- 156          {
- 157   1          unsigned char i;
- 158   1          for (i = 0 ; i < 8 ; i++){
- 159   2              if (BitOrder == LSBFIRST)
- 160   2                  DATA_PIN = !!(val & (1<<i));
- 161   2              else
- 162   2                  DATA_PIN = !!(val & (1<<(7-i)));
- 163   2              CLOCK_PIN = 1;
- 164   2              CLOCK_PIN = 0;
- 165   2          }
- 166   1      }
- 167          
- 168          void turnOn(unsigned char x, unsigned char y, unsigned char z)
- 169          {
- 170   1          LED[z] |= ( 1 << ((y << 2)+x));
- 171   1      }
- 172          
- 173          void turnOff(unsigned char x, unsigned char y, unsigned char z)
- 174          {
- 175   1          LED[z] &= ~(1 << ((y<<2)+x));
- 176   1      }
- 177          
- 178          unsigned char isOn(unsigned char x, unsigned char y, unsigned char z)
-C51 COMPILER V9.56.0.0   MAIN                                                              09/23/2016 23:49:13 PAGE 4   
+ 117   3                  LED[3] = LED[2];
+ 118   3                  LED[2] = LED[1];
+ 119   3                  LED[1] = LED[0];
+ 120   3                  LED[0] = rand()% 65536;
+ 121   3                  
+ 122   3                  
+ 123   3                  
+ 124   3                  display(100);
+ 125   3              }
+ 126   2          }
+ 127   1      }
+ 128          
+ 129          
+ 130          /****************************************************************************************
+ 131           *      don't edit this section
+ 132           *      不要修改以下這段code
+ 133           * *************************************************************************************/
+ 134          void delay(unsigned int x)
+ 135          {
+ 136   1          unsigned int i,j;
+ 137   1          for (i = 0 ; i < x ; i++ )
+ 138   1              for (j = 0 ; j < 240 ; j++ );
+ 139   1      }
+ 140          
+ 141          void init()
+ 142          {
+ 143   1          CLOCK_PIN = 0;
+ 144   1          LATCH_PIN = 1;
+ 145   1          DATA_PIN = 0;
+ 146   1          LAYER_1 = 0;
+ 147   1          LAYER_2 = 0;
+ 148   1          LAYER_3 = 0;
+ 149   1          LAYER_4 = 0;
+ 150   1          LED[0] = 0;
+ 151   1          LED[1] = 0;
+ 152   1          LED[2] = 0;
+ 153   1          LED[3] = 0;
+ 154   1      }
+ 155          
+ 156          void clock_delay()
+ 157          {
+ 158   1          unsigned char i;
+ 159   1          for (i = 0 ; i < 5 ; i++);
+ 160   1      }
+ 161          
+ 162          
+ 163          void shiftOut(unsigned char BitOrder,unsigned char val)
+ 164          {
+ 165   1          unsigned char i;
+ 166   1          for (i = 0 ; i < 8 ; i++){
+ 167   2              if (BitOrder == LSBFIRST)
+ 168   2                  DATA_PIN = !!(val & (1<<i));
+ 169   2              else
+ 170   2                  DATA_PIN = !!(val & (1<<(7-i)));
+ 171   2              CLOCK_PIN = 1;
+ 172   2              CLOCK_PIN = 0;
+ 173   2          }
+ 174   1      }
+ 175          
+ 176          void turnOn(unsigned char x, unsigned char y, unsigned char z)
+ 177          {
+ 178   1          LED[z] |= ( 1 << ((y << 2)+x));
+C51 COMPILER V9.56.0.0   MAIN                                                              09/23/2016 17:03:45 PAGE 4   
 
- 179          {
- 180   1          return ( LED[z] >> (( y << 2 ) + x ) ) & 1 ;
- 181   1      }
- 182          
- 183          void display(unsigned int times)
- 184          {
- 185   1          int iter;
- 186   1          unsigned char high_byte,low_byte;
- 187   1          while(times--){
- 188   2              for (iter = 0 ; iter < 4 ; iter ++ ){
- 189   3                  high_byte = LED[iter] & 0xFF;
- 190   3                  low_byte =  LED[iter] >> 8;
- 191   3                  LATCH_PIN = 0;
- 192   3                  shiftOut(LSBFIRST,high_byte);
- 193   3                  shiftOut(LSBFIRST,low_byte);
- 194   3                  //LATCH_PIN = 1;  
- 195   3                      
- 196   3                  P2 = 0x00;
- 197   3                  switch(iter){
- 198   4                      case 0:
- 199   4                          P1 = 0x0C;
- 200   4                          break;
- 201   4                      case 1:
- 202   4                          P1 = 0x14;
- 203   4                          break;
- 204   4                      case 2:
- 205   4                          P1 = 0x24;
- 206   4                          break;
- 207   4                      case 3:
- 208   4                          P1 = 0x44;
- 209   4                          break;
- 210   4                      default:
- 211   4                          P2_1 = 1;
- 212   4                          break;
- 213   4                  }   
- 214   3              }
- 215   2          }
- 216   1      }
+ 179   1      }
+ 180          
+ 181          void turnOff(unsigned char x, unsigned char y, unsigned char z)
+ 182          {
+ 183   1          LED[z] &= ~(1 << ((y<<2)+x));
+ 184   1      }
+ 185          
+ 186          unsigned char isOn(unsigned char x, unsigned char y, unsigned char z)
+ 187          {
+ 188   1          return ( LED[z] >> (( y << 2 ) + x ) ) & 1 ;
+ 189   1      }
+ 190          
+ 191          void display(unsigned int times)
+ 192          {
+ 193   1          int iter;
+ 194   1          unsigned char high_byte,low_byte;
+ 195   1          while(times--){
+ 196   2              for (iter = 0 ; iter < 4 ; iter ++ ){
+ 197   3                  high_byte = LED[iter] & 0xFF;
+ 198   3                  low_byte =  LED[iter] >> 8;
+ 199   3                  LATCH_PIN = 0;
+ 200   3                  shiftOut(LSBFIRST,high_byte);
+ 201   3                  shiftOut(LSBFIRST,low_byte);
+ 202   3                  //LATCH_PIN = 1;  
+ 203   3                      
+ 204   3                  P2 = 0x00;
+ 205   3                  switch(iter){
+ 206   4                      case 0:
+ 207   4                          P1 = 0x0C;
+ 208   4                          break;
+ 209   4                      case 1:
+ 210   4                          P1 = 0x14;
+ 211   4                          break;
+ 212   4                      case 2:
+ 213   4                          P1 = 0x24;
+ 214   4                          break;
+ 215   4                      case 3:
+ 216   4                          P1 = 0x44;
+ 217   4                          break;
+ 218   4                      default:
+ 219   4                          P2_1 = 1;
+ 220   4                          break;
+ 221   4                  }   
+ 222   3              }
+ 223   2          }
+ 224   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    515    ----
+   CODE SIZE        =    483    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

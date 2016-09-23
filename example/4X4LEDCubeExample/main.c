@@ -5,6 +5,7 @@
  *
  ***************************************************************************************/
 #include <regx51.h>
+#include <stdlib.h>
 
 /****************************************************************************************
  *      don't edit this section
@@ -102,7 +103,7 @@ void main()
     //int x;
     init();
     while(1){
-        LED[0] = 0x1212;
+        /*LED[0] = 0x1212;
         turnOn(3,0,1);
         turnOn(1,1,1);
         turnOn(3,1,1);
@@ -111,9 +112,13 @@ void main()
         turnOn(1,3,1);
         turnOn(3,3,1);
         LED[2] = 0x5555;
-        LED[3] = 0xAAAA;
+        LED[3] = 0xAAAA;*/
         while(1){
-		        display(0);
+						LED[3] = LED[2];
+						LED[2] = LED[1];
+						LED[1] = LED[0];
+						LED[0] = rand()% 65536;
+		        display(100);
 		    }
     }
 }
