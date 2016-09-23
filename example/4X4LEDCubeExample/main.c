@@ -27,13 +27,6 @@
 
 short LED[4];		//LED condition
 
-/****************************************************************************************
- **函數: delay
- **輸入: x
- **輸出: 無
- **功能: delay 1ms
- **************************************************************************************/
-void delay(unsigned int);
 
 /****************************************************************************************
  **函數: shiftOut
@@ -55,6 +48,14 @@ void clock_delay();
  **功能: configure AT89C51 and 74HC595
  * *************************************************************************************/
 void init();
+
+/****************************************************************************************
+ **函數: delay
+ **輸入: x
+ **輸出: 無
+ **功能: delay 1ms
+ **************************************************************************************/
+void delay(unsigned int);
 
 /****************************************************************************************
  **函數: turnOn
@@ -85,7 +86,7 @@ unsigned char isOn(unsigned char x, unsigned char y, unsigned char z);
 
 /****************************************************************************************
  **函數: display
- **輸入: times  (每層delay時間)
+ **輸入: times  (loop次數)
  **輸出: 無
  **功能: Starting Display LED cube by this function
  *       用這個函式開始顯示LED 方塊
@@ -101,6 +102,7 @@ void main()
     //int x;
     init();
     while(1){
+        LED[0] = 0x1212;
         turnOn(3,0,1);
         turnOn(1,1,1);
         turnOn(3,1,1);
@@ -125,7 +127,7 @@ void delay(unsigned int x)
 {
 	unsigned int i,j;
 	for (i = 0 ; i < x ; i++ )
-		for (j = 0 ; j < 160 ; j++ );
+		for (j = 0 ; j < 240 ; j++ );
 }
 
 void init()
@@ -158,9 +160,7 @@ void shiftOut(unsigned char BitOrder,unsigned char val)
             DATA_PIN = !!(val & (1<<i));
         else
             DATA_PIN = !!(val & (1<<(7-i)));
-        //clock_delay();
         CLOCK_PIN = 1;
-        //clock_delay();
         CLOCK_PIN = 0;
     }
 }
@@ -180,36 +180,37 @@ unsigned char isOn(unsigned char x, unsigned char y, unsigned char z)
     return ( LED[z] >> (( y << 2 ) + x ) ) & 1 ;
 }
 
-void display(unsigned char times)
+void display(unsigned int times)
 {
-    volatile int iter;
+    int iter;
     unsigned char high_byte,low_byte,tmp_p1;
-    for (iter = 0 ; iter < 4 ; iter ++ ){
-        high_byte = LED[iter] & 0xFF;
-        low_byte =  LED[iter] >> 8;
-        LATCH_PIN = 0;
-        shiftOut(LSBFIRST,high_byte);
-        shiftOut(LSBFIRST,low_byte);
-        //LATCH_PIN = 1;  
-            
-        P2 = 0x00;
-        switch(iter){
-            case 0:
-                P1 = 0x0C;
-                break;
-            case 1:
-                P1 = 0x14;
-                break;
-            case 2:
-                P1 = 0x24;
-                break;
-            case 3:
-                P1 = 0x44;
-                break;
-            default:
-                P2_1 = 1;
-                break;
-        }		
-        delay(times);
+    while(times--){
+        for (iter = 0 ; iter < 4 ; iter ++ ){
+            high_byte = LED[iter] & 0xFF;
+            low_byte =  LED[iter] >> 8;
+            LATCH_PIN = 0;
+            shiftOut(LSBFIRST,high_byte);
+            shiftOut(LSBFIRST,low_byte);
+            //LATCH_PIN = 1;  
+                
+            P2 = 0x00;
+            switch(iter){
+                case 0:
+                    P1 = 0x0C;
+                    break;
+                case 1:
+                    P1 = 0x14;
+                    break;
+                case 2:
+                    P1 = 0x24;
+                    break;
+                case 3:
+                    P1 = 0x44;
+                    break;
+                default:
+                    P2_1 = 1;
+                    break;
+            }		
+        }
     }
 }
