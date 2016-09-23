@@ -91,7 +91,7 @@ unsigned char isOn(unsigned char x, unsigned char y, unsigned char z);
  **功能: Starting Display LED cube by this function
  *       用這個函式開始顯示LED 方塊
  **************************************************************************************/
-void display(unsigned char times);
+void display(unsigned int times);
 
 /****************************************************************************************
  *      main function
@@ -125,9 +125,9 @@ void main()
  * *************************************************************************************/
 void delay(unsigned int x)
 {
-	unsigned int i,j;
-	for (i = 0 ; i < x ; i++ )
-		for (j = 0 ; j < 240 ; j++ );
+    unsigned int i,j;
+    for (i = 0 ; i < x ; i++ )
+        for (j = 0 ; j < 240 ; j++ );
 }
 
 void init()
@@ -183,7 +183,7 @@ unsigned char isOn(unsigned char x, unsigned char y, unsigned char z)
 void display(unsigned int times)
 {
     int iter;
-    unsigned char high_byte,low_byte,tmp_p1;
+    unsigned char high_byte,low_byte;
     while(times--){
         for (iter = 0 ; iter < 4 ; iter ++ ){
             high_byte = LED[iter] & 0xFF;
