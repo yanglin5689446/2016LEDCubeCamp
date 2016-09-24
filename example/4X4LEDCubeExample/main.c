@@ -114,12 +114,12 @@ void main()
         LED[2] = 0x5555;
         LED[3] = 0xAAAA;*/
         while(1){
-						LED[3] = LED[2];
-						LED[2] = LED[1];
-						LED[1] = LED[0];
-						LED[0] = rand()% 65536;
-		        display(100);
-		    }
+            LED[3] = LED[2];
+			LED[2] = LED[1];
+			LED[1] = LED[0];
+            LED[0] = rand()% 65536;
+            display(100);
+        }
     }
 }
 
